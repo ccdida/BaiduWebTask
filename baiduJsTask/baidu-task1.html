@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+  </head>
+<body>
+
+  <label>请输入北京今天空气质量：<input id="aqi-Input" type="text"></label>
+  <button id="bu_tton">确认填写</button>
+
+  <div>您输入的值是：<span id="aqiDisplay">尚无录入</span></div>
+
+<script type="text/javascript">
+
+window.onload=function() {
+  /*    
+  在注释下方写下代码
+  给按钮button绑定一个点击事件
+  在事件处理函数中
+  获取aqi-input输入的值，并显示在aqi-display中
+  */
+  var bu_tton=document.getElementById("bu_tton");//不能用bu-tton，但可以用bu_tton.标识符规则！！
+  var aqiInput=document.getElementById("aqi-Input");//html中id可以，但js中变量不可以
+  //var aqiDisplay=document.getElementById("aqiDisplay");
+  bu_tton.onclick=function(){
+   var txt=aqiInput.value;//文本框的值：value。
+   aqiDisplay.textContent=txt;//元素内容。为什么.span的id不用获取也能用？？？
+  };
+};
+
+</script>
+</body>
+</html>

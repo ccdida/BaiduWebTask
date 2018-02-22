@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.flex{
+			padding: 10px;
+			box-sizing: border-box;
+			border: 1px solid black;
+			display: flex;
+			flex-flow: row nowrap;
+			justify-content: space-between;
+		}
+		.box1{
+			width: 1000px;
+			height: 160px;			
+		}
+		.box1 .box01{
+			width: 485px;/*(1000-20-6(空隙)-4)/2*/
+			height: 138px;
+		}
+		.box1 .box01-1{
+			width:227.5px;
+			height: 116px;
+		}
+		.box1 .box01-1 .box01-1-1{
+			width: 98.75px;
+			height: 94px;
+		}
+		#preOrder{
+			position: absolute;
+			top: 20px;
+			right: 260px;
+		}
+		#inOrder{
+			position: absolute;
+			top: 20px;
+			right: 190px;
+		}
+		#postOrder{
+			position: absolute;
+			top: 20px;
+			right: 120px;
+		}
+		#box{
+			width: 1022px;
+			height: 360px;
+			padding: 10px 10px;
+			box-sizing: border-box;
+			border: 1px solid grey;
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: space-between;
+		}
+	</style>
+</head>
+<body>
+<div id="box">
+	<div class="box1 flex">
+		<div class="box01 flex">
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">			
+				</div>
+				<div class="box01-1-1 flex">			
+				</div>
+			</div>
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">
+				</div>
+				<div class="box01-1-1 flex">
+				</div>
+			</div>
+		</div>
+		<div class="box01 flex">
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">			
+				</div>
+				<div class="box01-1-1 flex">			
+				</div>
+			</div>
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">
+				</div>
+				<div class="box01-1-1 flex">
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="box1 flex">
+		<div class="box01 flex">
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">			
+				</div>
+				<div class="box01-1-1 flex">			
+				</div>
+			</div>
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">
+				</div>
+				<div class="box01-1-1 flex">
+				</div>
+			</div>
+		</div>
+		<div class="box01 flex">
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">			
+				</div>
+				<div class="box01-1-1 flex">			
+				</div>
+			</div>
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">
+				</div>
+				<div class="box01-1-1 flex">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<button id="preOrder">前序遍历</button>
+<button id="inOrder">中序遍历</button>
+<button id="postOrder">后序遍历</button>
+
+<script type="text/javascript">
+// 效果：遍历节点，通过背景色改变的动画形式呈现
+// 涉及函数：
+// 遍历函数：得到节点顺序的数组
+// 动画函数：遍历数组，在时间间隔内改变数组类节点的背景色
+	window.onload=function(){//在文档加载完以后执行
+		function init(){
+			var preOrder=document.getElementById('preOrder');
+			var inOrder=document.getElementById('inOrder');
+			var postOrder=document.getElementById('postOrder');
+			var rootNode=document.getElementById("box");
+
+			// var rootNode=document.getElementsByTagName("body")[0];这样是错误的，因为此时body中最后一个孩子是<script>
+			// 调用click事件
+			preOrder.onclick=function preOrderBtnClick(){
+				
+				let arr=[];
+				preOrderClick(rootNode,arr);
+				setAnimation(arr);
+			}
+			inOrder.onclick=function inOrderBtnClick(){
+				
+				let arr=[];
+				inOrderClick(rootNode,arr);
+				setAnimation(arr);
+			}
+			postOrder.onclick=function postOrderBtnClick(){
+				
+				let arr=[];
+				postOrderClick(rootNode,arr);
+				setAnimation(arr);
+			}
+
+		}
+
+		init();
+	//前序遍历思路：找到元素的根节点.需要深入理解递归。
+		// function preOrderClick(rootNode,arr){
+		// 	if (rootNode!==null){
+
+		// 	arr.push(rootNode);
+		// 	preOrderClick(rootNode.firstElementChild,arr);
+		// 	preOrderClick(rootNode.lastElementChild,arr);
+
+		// 	}
+
+		// }
+	//尝试非递归前序遍历
+
+		function preOrderClick(rootNode,arr){
+		
+			 if(!rootNode) {  
+			  	throw new Error('Empty Tree');
+			 } 
+			 var stack = [];
+			 stack.push(rootNode); 
+			 while(stack.length !== 0) {
+				  rootNode = stack.pop();
+				  arr.push(rootNode);
+				  //其实是用栈的push和pop来决定顺序，先将元素节点的右孩子和左孩子push进去。再取出左孩子，放到另一个数组里排序。如果这个左孩子没有任何子元素，此时栈也不为0，即可以把右孩子取出来继续压入排序数组。如果这个左孩子还有孩子，那么就先去解决这个左孩子。反正被压入栈的元素会一个一个取出来，并且被放到排序数组arr中。   
+				  if(rootNode.lastElementChild){
+				  	stack.push(rootNode.lastElementChild);  
+				  } 
+				  if(rootNode.firstElementChild){
+				  	stack.push(rootNode.firstElementChild);
+				  } 
+
+			 }
+
+		}
+
+
+	//中序遍历
+		// function inOrderClick(rootNode,arr){
+		// 	if (rootNode!==null){
+		// 	inOrderClick(rootNode.firstElementChild,arr);
+		// 	arr.push(rootNode);
+		// 	inOrderClick(rootNode.lastElementChild,arr);
+
+		// 	}
+
+		// }
+		//非递归中序遍历
+		function inOrderClick(rootNode,arr){
+		
+			 if(!rootNode) {  
+			  throw new Error('Empty Tree');
+			 } 
+			 var stack = []; 
+			 while(stack.length !== 0 || rootNode) {  
+				  if(rootNode) {
+				   stack.push(rootNode);
+				   rootNode = rootNode.firstElementChild;
+				  } 
+				  else {
+				   rootNode = stack.pop();   
+				   arr.push(rootNode);
+				   rootNode = rootNode.lastElementChild;
+				  }
+			 }
+
+	     }
+	//后序遍历:递归，总之调用一次，就会把所有指令的执行完，只是顺序上的问题而已。
+		// function postOrderClick(rootNode,arr){
+		// 	if (rootNode!==null){
+		// 	postOrderClick(rootNode.firstElementChild,arr);
+		// 	postOrderClick(rootNode.lastElementChild,arr);
+		// 	arr.push(rootNode);
+
+		// 	}
+
+		// }
+
+	//非递归后续遍历
+		function postOrderClick(rootNode,arr){
+			if(!rootNode) {  
+		  		throw new Error('Empty Tree');
+		 	} 
+			 var stack = [];
+			 stack.push(rootNode); 
+			 var tmp = null;
+			 while(stack.length !== 0) {
+			  	tmp = stack[stack.length - 1]  
+			  	if(tmp.firstElementChild && rootNode !== tmp.firstElementChild && rootNode !== tmp.lastElementChild) {
+			   		stack.push(tmp.firstElementChild);
+			    } 
+			    else if(tmp.lastElementChild && rootNode !== tmp.lastElementChild) {
+			   		stack.push(tmp.lastElementChild)
+			  } else {   
+			   		arr.push(stack.pop());
+			   		rootNode = tmp;
+			  }
+
+			 }
+
+		}
+		//另一种非递归方法
+		// var arr=[],res=[];
+		// arr.push(root);
+		// while(arr.length!=0){
+		// 	    var p=arr.pop();
+		// 	    res.push(p.val);
+		// 	    if(p.left!=null){
+		// 	        arr.push(p.left);
+		// 	    }
+		// 	    if(p.right!=null){
+		// 	        arr.push(p.right);
+		// 	    }
+		// 	}
+		// return res.reverse();
+
+
+
+	//动画,参数-节点数组
+	 	var timesRun=0;
+	 	var interval;
+	 	var i=0;
+		function setAnimation(arr){
+				if (timesRun!=0){
+					clearInterval(interval);
+					arr[i-1].style.backgroundColor="#ffffff";
+
+				}
+				
+					timesRun=0;
+					i=0;
+					interval=setInterval(function(){myTimer()},300);
+					function myTimer(){
+						
+						if (timesRun==arr.length) {
+							arr[i-1].style.backgroundColor="#ffffff";
+							clearInterval(interval);
+						}
+						else{
+							for(j=0;j<arr.length;j++){
+								arr[j].style.backgroundColor="#ffffff";
+							}
+
+							arr[i].style.backgroundColor="red";
+
+							i+=1;
+							timesRun+=1;
+						}
+					
+
+					}
+				
+			
+			 
+
+		}
+
+		// function reset(interval){
+		// 	clearInterval(interval);
+		// 	for(j=0;j<arr.length;j++){
+		// 						arr[j].style.backgroundColor="#ffffff";
+		// 					}
+		// }
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+		
+
+
+</script>
+</body>
+</html>

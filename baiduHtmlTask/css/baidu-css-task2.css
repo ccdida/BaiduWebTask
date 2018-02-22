@@ -1,0 +1,178 @@
+body{
+	margin:0 0;
+	background-color: black;
+    padding-left: 30px;
+	padding-right: 25px;
+}
+.header{
+	width: 100%;
+	height:60px;
+	background-color:#333333;
+}
+.header-logo{
+	margin-left:20px;
+	margin-top:10px;
+}
+.lead-link{
+	
+	float:right;
+	margin-right:20px;
+}
+.li-link{
+	float:right;
+	margin-left:25px;
+}
+.main-container{
+	padding: 20px 20px;
+	background-color: #d6d1d1eb;
+}
+.main{
+	padding:20px 20px;
+	background-color: #ffffff;
+    box-shadow: 3px 3px 5px grey;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+	}
+.h2{
+	color:#686a54;
+}
+.p1{
+	color:#747378;
+}
+.mydiv1 .p2{
+	text-indent:33px;
+}
+.p2 a:link{color:red}
+.p2 a:visited{color:green}
+.p2 a:visited{color:blue}
+.p2 a:hover{color:pink}
+.p2 a:active{color:yellow}
+
+.mydiv2{
+	margin-top:20px;
+}
+.mydiv2 ul{
+	list-style:none;
+}
+.mydiv3{
+	margin-top:20px;
+}
+.mydiv3 ul{
+	list-style:none;
+}
+.mydiv3 li{
+	float: left;
+}
+.li-picture{
+	display:block;
+	margin-top:12px;
+}
+.mydiv3 li{
+	text-align:center;
+	width:230px;
+	overflow:hidden;
+	border:1px solid #cbcbcb;
+	margin-top:15px;
+	margin-left:20px;
+	padding:10px 10px;
+}
+.clear{
+	clear: both;
+}
+.mydiv4{
+	margin-top:20px;
+}
+
+.table1{
+  border-collapse:collapse;
+  width:100%;
+  }
+.caption{
+  caption-side:bottom;
+}
+.table1,th,td{
+
+	border:1px solid grey;
+}
+.tr1{
+	background-color:#333333;
+	color:#fffdf1;
+}
+.tr7{
+	background-color:grey;
+
+	}
+
+.mydiv5{
+	
+	
+}
+.mydiv5 .div1{
+	border-left:3px solid grey;
+	padding-left:20px;
+	width:100%;
+	height:50px;
+}
+.mydiv5 .div1 h2{
+ 
+line-height:50px;
+}
+.mydiv5 .div2{
+	margin-top:3px;
+}
+
+.right{ 
+	display: inline-block;
+    width: 35%;
+    text-align: right;
+    margin-right: 5px;
+}
+
+
+.left{	
+display:inline-block;
+padding-left: 35%;
+margin-left: 10px;
+}
+.description{
+	vertical-align: top;
+}
+.textarea{
+	vertical-align: top;
+}
+.button1{
+	background-color:yellow;
+	width:100%;
+	font-size:20px;
+	border-radius:12px;
+    border:2px solid #fff;
+    /*box-shadow:4px 4px 6px blue inset,-4px -4px 6px blue inset;*/
+    color:red;
+
+}
+.button1:hover {
+    background-color: blue; 
+    color: white;
+}
+.footer{
+	width:100%;
+	height:67px;
+	background-color:black;
+	color:white;
+	text-align:center;
+	line-height:67px;
+}
+
+.box-left{
+	width: 100%;
+    float: left;
+    padding-right: 460px;
+    box-sizing: border-box;
+    
+}
+.box-right{
+  width: 400px;
+  float: left;
+  margin-left:-440px; 
+}

@@ -1,0 +1,1466 @@
+*{
+	margin: 0px 0px;
+}
+/*body{
+	min-width: 1280px;
+	width: 100%;
+	margin: 0 auto;
+}*/
+/*设置背景图要看背景图在哪个文件，css在哪个文件，不要随便写！*/
+/*顶部*/
+.clear{
+	clear: both;
+}
+body{
+	background-color: #000000;
+}
+.header{
+ min-width:1280px;
+ width: 100%;
+ height: 56px;
+ margin: 0 auto;
+ background-color: #2189bf;
+ background-image: url("../image/header-left-logo.png");
+ background-repeat: no-repeat;
+ background-position: 50px 10px;
+}
+.header .header-right{
+	margin-left: 810px;
+	position: relative;
+	box-sizing: border-box;
+}
+.header .header-right .header-search .btn{
+width: 16px;
+height: 28px;
+background-image: url("../image/header-search.png");
+background-color: transparent;
+background-repeat: no-repeat;
+background-position: 0px 6px;/*在button中定位*/
+outline: none;
+border:none;
+padding: 0 0;
+position: absolute;
+top: 14px;
+left: 20px;/*给button定位*/
+}
+.header .header-right .header-search .input-box{
+	width: 313px;
+	height: 28px;
+    border-radius: 28px; 
+    margin-top:14px; 
+    outline: none;
+    border:none;
+    padding: 0 0;
+    background-color: #ffffff;
+
+}
+.header .header-right .header-load{
+	position: absolute;
+	left: 334px;
+	top: 14px;
+	
+}
+.header .header-right .header-load img{
+  vertical-align: middle;
+}
+.header .header-right .header-load a{
+	vertical-align: middle;
+	font-size: 12px;
+	font-family: SimSun;
+	color: #ffffff;
+	text-decoration: none;
+	margin-left: 3px;
+}
+.main-container{
+	margin: 0 auto;
+	width: 1280px;
+	height: 1213px;
+}
+/*布局*/
+.main{
+	float: left;
+	width: 1280px;
+	box-sizing: border-box;
+    padding-left: 260px;
+}
+.main-right{
+  font-size: 0;
+  height: 1213px;
+  background-color: #eeedec;
+  
+}
+.main-left{
+	float: left;
+	margin-left: -100%;
+	width: 260px;
+	height: 1213px;
+	background-color: #2a2e3d;
+}
+/*左边部分*/
+.main-left .box1{
+ width: 260px;
+ height: 150px;
+ position: relative;
+ background-color: #2a2e3d;
+}
+.main-left .box1 .boxes1-circle{
+ width: 47px;
+ height: 47px;
+ border-radius: 47px;
+ background-color: #bababe;
+ position: absolute;
+ left: 51px;
+ top: 23px;
+ background-image: url("../image/hu.png");
+ background-repeat: no-repeat;
+ overflow: hidden;
+}
+.main-left .box1 .boxes2-border{
+ width: 56px;
+ height: 56px;
+ border-radius: 56px;
+ background-color: #2a2e3d;
+ border:1px solid #bfbfc3;
+ position: absolute;
+ left: 45px;
+ top: 18px;
+}
+.main-left .box1 .text-right{
+	color: #f6f5f5;
+	font-size: 16px;
+	font-family: SimHei;
+	line-height: 20.5px;
+	display: inline-block;
+	position: absolute;
+	left: 120px;
+	top: 40px;
+}
+.main-left .box1 .text-bottom-left{
+    width: 120px;
+	height: 29px;
+	border-right: 2px solid #313545;
+	padding-right: 30px;
+	box-sizing: border-box;
+	text-align: right;
+	position: absolute;
+	top: 98px;
+	line-height: 29px;
+}
+.main-left .box1 .text-bottom-left .span001{
+	color: #6e8095;
+	font-size: 16px;
+	font-family: SimHei;
+	display: block;
+	line-height: 16px;
+}
+.main-left .box1 .text-bottom-left .span002{
+	color: #6e8095;
+	font-size: 12px;
+	font-family: SimSun;
+	display: block;
+	line-height: 12px;
+}
+.main-left .box1 .text-bottom-right{
+	position: absolute;
+	top: 98px;
+	left: 150px;
+}
+.main-left .box1 .text-bottom-right .span001{
+	color: #6e8095;
+	font-size: 16px;
+	font-family: SimHei;
+	display: block;
+	line-height: 16px;
+}
+.main-left .box1 .text-bottom-right .span002{
+	color: #6e8095;
+	font-size: 12px;
+	font-family: SimSun;
+	display: block;
+	line-height: 12px;
+}
+/*左边第二个box*/
+.main-left .box2{
+  background-color: #383d4e;
+  width: 260px;
+  height: 191px;
+  font-size: 0;
+
+}
+/*图1*/
+.main-left .box2 .img1{
+margin-left: 46px;
+margin-right: 12px;
+margin-top: 14px;
+}
+/*个人报表*/
+.main-left .box2 .span001{
+	color: #dbdbde;
+	font-family: SimHei;
+	font-size:12px;
+    margin-top: 14px;
+    display: inline-block;
+    line-height: 12px;
+ /*   margin-bottom: 20px; 需要设置为inline-block才有效*/
+
+}
+/*四张小图*/
+.main-left .box2 .img2,.main-left .box2 .img3,.main-left .box2 .img4,.main-left .box2 .img5{
+	
+	display: inline-block;
+	vertical-align: middle;
+}
+/*文件一 文件二*/
+.main-left .box2 .span002,.main-left .box2 .span003{
+	font-size: 12px;
+	font-family: SimHei;
+	color: #6e8095;
+	display: inline-block;
+	line-height: 12px;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+/*两个尖角符号*/
+.main-left .box2 .img2{
+	margin-left: 67px;
+	margin-right: 7px;
+}
+/*这是上面的尖角符号（图片顺序问题）*/
+.main-left .box2 .img4{
+	margin-left: 69px;
+	margin-right: 9px;
+}
+.main-left .box2 .img4,.main-left .box2 .img5,.main-left .box2 .span002{
+	margin-bottom: 17px;
+	margin-top: 19px;
+}
+/*文档1*/
+.main-left .box2 .img6{
+	margin-top: 18px;
+	margin-left: 101px;
+	margin-right: 4px;
+	margin-bottom: 19px;
+	vertical-align: middle;
+}
+
+.main-left .box2 .span004{
+	font-size:12px; 
+	color:#ededef;
+	font-family: SimHei;
+	display: inline-block;
+	line-height: 12px;
+	margin-bottom: 19px;
+	margin-top: 18px;
+	vertical-align: middle;
+}
+.main-left .box2 .img7{
+	margin-left: 101px;
+	margin-right: 4px;
+	vertical-align: middle;
+}
+
+.main-left .box2 .span005{
+	font-size:12px; 
+	color:#6e8095;
+	font-family: SimHei;
+	display: inline-block;
+	line-height: 12px;
+	vertical-align: middle;
+}
+/*文件三*/
+.main-left .box2 .span006{
+	font-size: 12px;
+	font-family: SimHei;
+	color: #6e8095;
+	display: inline-block;
+	line-height: 12px;
+	vertical-align: middle;
+	margin-left: 4px;
+}
+/*尖角符号*/
+.main-left .box2 .img8{
+	margin-left: 69px;
+	margin-right: 9px;
+}
+.main-left .box2 .img8,.main-left .box2 .img9,.main-left .box2 .span006{
+	display: inline-block;
+	line-height: 12px;
+	vertical-align: middle;
+	margin-top: 19px;
+}
+/*左边第三个box*/
+.main-left .box3{
+	font-size: 0;
+}
+.main-left .box3 img{
+margin-left: 46px;
+margin-right: 26px;
+margin-bottom: 38px;
+vertical-align: middle;
+}
+.main-left .box3 span{
+	font-size: 12px;
+	color: #6d7f95;
+	font-family:SimHei;
+	display: inline-block;
+	vertical-align: middle;
+    margin-bottom: 38px;
+	line-height: 12px;
+}
+/*第一行上外间距*/
+.main-left .box3 .img1,.main-left .box3 .span001{
+margin-top: 16px;
+}
+
+/*主要部分-右边*/
+/*右边小导航栏*/
+.main-right .right-header{
+	background-color: #ffffff;
+	width: 1021px;
+	height: 31px;
+	display: table-cell;
+	vertical-align: middle;
+	font-size: 0;
+	box-sizing: border-box;
+	padding-left: 30px;
+}
+.main-right .right-header .span001{
+font-family: SimHei;
+font-size: 12px;
+color: #aaaaaa;
+display: inline-block;
+line-height: 12px;
+}
+.main-right .right-header .span002{
+	color: #75a0c6;
+}
+/*右边除导航栏的部分*/
+.main-right .right-container{
+	width: 1021px;
+	height: 1180px;
+	box-sizing: border-box;
+	padding-left:60px;
+	padding-right: 70px;
+	padding-top: 20px; 
+
+}
+/*右边第一个块 box1*/
+.main-right .right-container .box1{
+	width: 891px;
+	height: 86px;
+	background-color: #ffffff;
+	position: relative;
+	border: 1px solid #dddee0;
+	box-sizing: border-box;
+	padding-top: 15px;
+	margin-bottom: 8px;
+
+}
+/*box1--所有的文字*/
+.main-right .right-container .box1 .span001,.main-right .right-container .box1 .span002,.main-right .right-container .box1 .span003,.main-right .right-container .box1 .span004,.main-right .right-container .box1 .span005,.main-right .right-container .box1 .span006,.main-right .right-container .box1 .span007{
+	font-family: SimHei;
+	font-size:12px;
+	color:#aaaaaa;
+	display: inline-block;
+	line-height: 12px;
+}
+/*宽度相同的select1*/
+.main-right .right-container .box1 .select01,.main-right .right-container .box1 .select04,.main-right .right-container .box1 .select05{
+	width: 70px;
+	height: 26px;
+	border: 1px solid #cacbcb;
+	padding-left: 10px;
+	outline: none;
+	box-sizing: border-box;
+	color: #323333;
+	font-size: 12px;
+	font-family: SimHei;
+	appearance:none;
+  	-moz-appearance:none;
+	-webkit-appearance:none;
+	background-image: url("../image/right-box1-img2.png");
+	background-repeat: no-repeat;
+	background-position: 51px 9px;
+}
+/*宽度相同的select2*/
+.main-right .right-container .box1 .select02,.main-right .right-container .box1 .select03,.main-right .right-container .box1 .select06{
+	width: 121px;
+	height: 26px;
+	border: 1px solid #cacbcb;
+	padding-left: 6px;
+	outline: none;
+	box-sizing: border-box;
+	color: #323333;
+	font-size: 12px;
+	font-family: SimHei;
+	appearance:none;
+  	-moz-appearance:none;
+	-webkit-appearance:none;
+	background-image: url("../image/right-box1-img2.png");
+	background-repeat: no-repeat;
+	background-position: 101px 9px;
+}
+/*换button*/
+.main-right .right-container .box1 .btn01{
+	width: 16px;
+	height: 16px;
+	background-color: #ababab;
+	outline: none;
+	border: none;
+	padding: 0 0;
+	color: #ffffff;
+	font-size: 12px;
+	font-family: SimHei;
+}
+/*时间*/
+.main-right .right-container .box1 .time{
+	width: 121px;
+	height: 26px;
+	border: 1px solid #cacbcb;
+	outline: none;
+	font-size: 12px;
+	font-family: SimHei;
+	color: #323333;
+	padding: 0px 0px 0px 7px;
+	box-sizing: border-box;
+}
+/*搜索*/
+.main-right .right-container .box1 .btn02{
+	width: 51px;
+	height: 26px;
+	border: none;
+	padding: 0 0;
+	box-sizing: border-box;
+	background-color: #388bc2;
+	color: #ffffff;
+}
+/*开始定位*/
+/*查询项*/
+.main-right .right-container .box1 .span001{
+	margin-left: 29px;
+	margin-right: 15px;
+}
+/*买方*/
+.main-right .right-container .box1 .span002{
+	margin-left: 38px;
+	margin-right: 15px;
+}
+/*日期*/
+.main-right .right-container .box1 .span004{
+	margin-left: 62px;
+	margin-right: 15px;
+}
+/*总耗时*/
+.main-right .right-container .box1 .span005{
+	margin-left: 16px;
+	margin-right: 11px;
+}
+/*卖方*/
+.main-right .right-container .box1 .span003{
+	margin-left: 188px;
+	margin-right: 15px;
+}
+/*人数*/
+.main-right .right-container .box1 .span006{
+	margin-left: 62px;
+	margin-right: 15px;
+}
+/*成交项*/
+.main-right .right-container .box1 .span007{
+	margin-left: 15px;
+	margin-right: 12px;
+}
+/*图片*/
+.main-right .right-container .box1 .img1{
+	position: absolute;
+	left: 350px;
+	top: 23px;
+}
+/*换button放在图片上*/
+.main-right .right-container .box1 .btn01{
+	position: absolute;
+	left: 360px;
+	top: 34px;
+}
+/*搜索*/
+.main-right .right-container .box1 .btn02{
+	position: absolute;
+	right: 112px;
+	top: 30px;
+}
+/*间距*/
+.main-right .right-container .box1 .span002,.main-right .right-container .box1 .select02,.main-right .right-container .box1 .span004,.main-right .right-container .box1 .time,.main-right .right-container .box1 .span005,.main-right .right-container .box1 .select04{
+	margin-bottom: 5px;
+}
+
+
+/*box2*/
+.main-right .right-container .box2{
+	width: 891px;
+	height: 65px;
+	margin-bottom: 21px;
+}
+/*boxes01*/
+.main-right .right-container .box2 .boxes01{
+	width: 31px;
+	height: 65px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	border-top: 1px solid #cacdd0;
+	display: inline-block;
+	position: relative;
+	margin-right: 4px;
+	vertical-align: bottom;
+}
+.main-right .right-container .box2 .img1{
+	position: absolute;
+	left: 11px;
+	top: 24px;
+}
+/*boxes02*/
+.main-right .right-container .box2 .boxes02{
+	width: 111px;
+	height: 61px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	border-left: 1px solid #cacdd0;
+	display:inline-block;
+	position: relative;
+	vertical-align: bottom;
+	margin-right: 4px;
+}
+/*顶栏横线*/
+.main-right .right-container .box2 .boxes02 .span001{
+	width: 111px;
+	height: 4px;
+	background-color: #4388c9;
+	box-sizing: border-box;
+	border: 1px solid #98b5d1;
+	display: inline-block;
+	position: absolute;
+	top: -4px;
+	left: -1px;
+}
+.main-right .right-container .box2 .boxes02 .span002{
+	color: #323333;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 9px;
+	margin-top: 11px;
+	margin-left: 30px;
+	margin-bottom: 13px;
+}
+.main-right .right-container .box2 .boxes02 .img2{
+	margin-left: 28px;
+	margin-right: 2px;
+}
+.main-right .right-container .box2 .boxes02 .span003{
+	color: #ec6500;
+	font-size: 21px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 16px;
+}
+/*boxes03*/
+.main-right .right-container .box2 .boxes03{
+	width: 111px;
+	height: 65px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	border-left: 1px solid #dcdee0;
+	border-top: 1px solid #cacdd1;
+	border-right: 1px solid #edeef0;
+	border-bottom: 1px solid #edeef0;
+	display:inline-block;
+	vertical-align: bottom;
+}
+.main-right .right-container .box2 .boxes03 .span002{
+	color: #323333;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 9px;
+	margin-top: 11px;
+	margin-left: 30px;
+	margin-bottom: 13px;
+}
+.main-right .right-container .box2 .boxes03 .img2{
+	margin-left: 28px;
+	margin-right: 2px;
+}
+.main-right .right-container .box2 .boxes03 .span003{
+	color: #ec6500;
+	font-size: 21px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 16px;
+}
+/*boxes04*/
+.main-right .right-container .box2 .boxes04{
+	width: 111px;
+	height: 65px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	border-left: 1px solid #ced0d4;
+	border-top: 1px solid #cacdd1;
+	border-right: 1px solid #edeef0;
+	border-bottom: 1px solid #edeef0;
+	display:inline-block;
+	vertical-align: bottom;
+	margin-left: 4px;
+	margin-right:4px;
+}
+.main-right .right-container .box2 .boxes04 .span002{
+	color: #323333;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 9px;
+	margin-top: 11px;
+	margin-left: 30px;
+	margin-bottom: 13px;
+}
+.main-right .right-container .box2 .boxes04 .img2{
+	margin-left: 28px;
+	margin-right: 2px;
+}
+.main-right .right-container .box2 .boxes04 .span003{
+	color: #ec6500;
+	font-size: 21px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 16px;
+}
+/*boxes05*/
+.main-right .right-container .box2 .boxes05{
+	width: 111px;
+	height: 65px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	border-left: 1px solid #ced0d4;
+	border-top: 1px solid #cacdd1; 
+	border-right: 1px solid #edeef0;
+	border-bottom: 1px solid #edeef0;
+	display:inline-block;
+	vertical-align: bottom;
+}
+.main-right .right-container .box2 .boxes05 .span002{
+	color: #323333;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 9px;
+	margin-top: 11px;
+	margin-left: 30px;
+	margin-bottom: 13px;
+}
+.main-right .right-container .box2 .boxes05 .img2{
+	margin-left: 28px;
+	margin-right: 2px;
+}
+.main-right .right-container .box2 .boxes05 .span003{
+	color: #ec6500;
+	font-size: 21px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 16px;
+}
+/*boxes06*/
+.main-right .right-container .box2 .boxes06{
+	width: 111px;
+	height: 65px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	border-left: 1px solid #ced0d4;
+	border-top: 1px solid #cacdd1;
+	border-right: 1px solid #edeef0;
+	border-bottom: 1px solid #edeef0;
+	display:inline-block;
+	vertical-align: bottom;
+	margin-left: 4px;
+	margin-right:4px;
+}
+.main-right .right-container .box2 .boxes06 .span002{
+	color: #323333;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 9px;
+	margin-top: 11px;
+	margin-left: 30px;
+	margin-bottom: 13px;
+}
+.main-right .right-container .box2 .boxes06 .img2{
+	margin-left: 28px;
+	margin-right: 2px;
+}
+.main-right .right-container .box2 .boxes06 .span003{
+	color: #ec6500;
+	font-size: 21px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 16px;
+}
+/*boxes07*/
+.main-right .right-container .box2 .boxes07{
+	width: 111px;
+	height: 65px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	border-left: 1px solid #ced0d4;
+	border-top: 1px solid #cacdd1;
+	border-right: 1px solid #edeef0;
+	border-bottom: 1px solid #edeef0;
+	display:inline-block;
+	vertical-align: bottom;
+	margin-right:4px;
+}
+.main-right .right-container .box2 .boxes07 .span002{
+	color: #323333;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 9px;
+	margin-top: 11px;
+	margin-left: 30px;
+	margin-bottom: 13px;
+}
+.main-right .right-container .box2 .boxes07 .img2{
+	margin-left: 28px;
+	margin-right: 2px;
+}
+.main-right .right-container .box2 .boxes07 .span003{
+	color: #ec6500;
+	font-size: 21px;
+	font-family: "Microsoft YaHei";
+	display: inline-block;
+	line-height: 16px;
+}
+/*box08*/
+.main-right .right-container .box2 .boxes08{
+	width: 31px;
+	height: 65px;
+	background-color: #ffffff;
+	box-sizing: border-box;
+	border-left: 1px solid #cacdd0;
+	border-top: 1px solid #cacdd0;
+	border-right: 1px solid #edeef0;
+	border-bottom: 1px solid #edeef0;
+	display: inline-block;
+	position: relative;
+	margin-right: 4px;
+	vertical-align: bottom;
+}
+.main-right .right-container .box2 .img4{
+	position: absolute;
+	left: 11px;
+	top: 24px;
+}
+/*box09*/
+.main-right .right-container .box2 .boxes09{
+	width: 131px;
+	height: 65px;
+	box-sizing: border-box;
+	border-left: 1px solid #ced0d4;
+	border-top: 1px solid #cacdd1;
+	border-right: 1px solid #edeef0;
+	border-bottom: 1px solid #edeef0;
+	background-color: #ffffff;
+    display: inline-block;
+
+}
+.main-right .right-container .box2 .boxes09 .img3{
+  margin-left: 18px;
+  margin-top: 19px;
+  vertical-align: top;
+}
+.main-right .right-container .box2 .boxes09 .span001{
+	display: inline-block;
+	color: #535353;
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	margin-top: 27px;
+	margin-left: 11px;
+	vertical-align: top;
+}
+/*box3*/
+.main-right .right-container .box3{
+	width: 892px;
+	height: 90px;
+	margin-bottom: 13px;
+}
+/*box3--4月份统计*/
+.main-right .right-container .box3 .span01{
+font-family: "Microsoft YaHei";
+font-size: 12px;
+color:#323333;
+display: inline-block;
+line-height: 13px;
+margin-bottom: 5px;
+
+}
+/*boxes的统一特征*/
+.main-right .right-container .box3 .boxes{
+	width:202px; 
+	height:72px;
+	box-sizing: border-box;
+	background-color: #ffffff;
+	margin-right: 28px;
+	display: inline-block;
+	border: 1px solid #d2d5d9;
+}
+.main-right .right-container .box3 .vertical-line{
+	display: inline-block;
+	width: 3px;
+	height: 70px;
+	background-color: #43b29d;
+}
+.main-right .right-container .box3 .mydiv1{
+	display: inline-block;
+	vertical-align: top;
+}
+.main-right .right-container .box3 .number1{
+	font-size: 12px;
+	font-family: SimHei;
+	display: inline-block;
+	line-height: 9px;
+	margin-top: 20px;
+	margin-left: 8px;
+}
+.main-right .right-container .box3 .number2{
+	font-size: 12px;
+	-webkit-transform:scale(0.83);
+	font-family: SimHei;
+	color: #aaaaaa;
+	display: inline-block;
+	line-height: 10px;
+	margin-top: 14px;
+	margin-left: 6px;
+}
+.main-right .right-container .box3 .mydiv2{
+	width: 61px;
+	height: 47px;
+	background-color: #43b29d;
+	margin-left: 80px;
+	margin-top: 12px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+/*单个特征*/
+/*boxes04*/
+.main-right .right-container .box3 .boxes04{
+	margin-right: 0px;
+}
+/*竖线颜色*/
+.main-right .right-container .box3 .boxes02 .vertical-line{
+	background-color: #398bc2;
+}
+.main-right .right-container .box3 .boxes03 .vertical-line{
+	background-color: #d96c5c;
+}
+.main-right .right-container .box3 .boxes04 .vertical-line{
+	background-color: #e2cd46;
+}
+/*方块颜色*/
+.main-right .right-container .box3 .boxes02 .mydiv2{
+	background-color: #398bc2;
+}
+.main-right .right-container .box3 .boxes03 .mydiv2{
+	background-color: #d96c5c;
+}
+.main-right .right-container .box3 .boxes04 .mydiv2{
+	background-color: #e2cd46;
+}
+/*其实不用单独写number类，只需要先把公共span写出来，需要修改的时候，再具体到每一个span就可以了*/
+/*box4*/
+.main-right .right-container .box4{
+	width: 532px;
+	height: 359px;
+	box-sizing: border-box;
+	border: 1px solid #e7e8eb;
+	background-color: #ffffff;
+	border-radius: 10px;
+	margin-right: 8px;
+	float: left;
+}
+/*第一组项目*/
+.main-right .right-container .box4 .project1{
+	width: 530px;
+	height: 41px;
+	background-color: #f4f5f7;
+	color: #aaaaaa;
+	font-size: 12px;
+	font-family: SimHei;
+	padding-left: 19px;
+	padding-top: 15px;
+	box-sizing: border-box;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+}
+/*项目内容-背景图*/
+.main-right .right-container .box4 .project2{
+  width: 530px;
+  height: 316px;
+  background-image: url("../image/box5-img1.png");
+  background-position:20px 12px;
+  background-repeat: no-repeat;
+  padding-left: 20px;
+  padding-top: 12px;
+  box-sizing: border-box;
+}
+/*项目内容-导航*/
+.main-right .right-container .box4 .project2 .project01{
+	width: 86px;
+	height: 27px;
+	text-align: center;
+	color: #535353;
+	font-family: "Microsoft YaHei";
+	font-size: 12px;
+	line-height: 27px;
+	display: inline-block;
+	margin-right: 4px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	box-sizing: border-box;
+}
+/*项目一背景色*/
+.main-right .right-container .box4 .project2 .span002{
+	background-color: #ededf0;
+}
+/*项目内容-表格*/
+.main-right .right-container .box4 .project2 .table1{
+	border-collapse:collapse;
+	margin-left: 37px;
+	margin-top: 28px;
+	
+}
+/*项目内容-单元格*/
+.main-right .right-container .box4 .project2 .table1 td{
+	border:1px solid #ddddde;
+	width: 101px;
+	height: 28px;
+	text-align: center;
+	color: #999dae;
+	font-size: 12px;
+	font-family: SimSun;
+}
+/*项目内容-单元格1背景色*/
+.main-right .right-container .box4 .project2 .table1 .td01{
+	background-color: #f4f5f7;
+}
+.clear{
+	clear: both;
+}
+.main-right .right-container .box5{
+	width: 351px;
+	height: 359px;
+	box-sizing: border-box;
+	border: 1px solid #e7e8eb;
+	background-color: #ffffff;
+	border-radius: 10px;
+	float: left;
+}
+/*第一组项目*/
+.main-right .right-container .box5 .project1{
+	width: 349px;
+	height: 41px;
+	background-color: #f4f5f7;
+	color: #aaaaaa;
+	font-size: 12px;
+	font-family: SimHei;
+	padding-left: 19px;
+	padding-top: 15px;
+	box-sizing: border-box;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+}
+/*右边下半部分*/
+.main-right .right-container .box5 .project1-description{
+	width: 349px;
+	height: 316px;
+	padding-left: 35px;
+	padding-top: 17px;
+	box-sizing: border-box;
+}
+/*标题*/
+.main-right .right-container .box5 .project1-description .span001{
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	color: #c3c2c2;
+	display: inline-block;
+	line-height: 12px;
+}
+/*项目报表三*/
+.main-right .right-container .box5 .project1-description .span002{
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	color: #535353;
+	display: inline-block;
+	line-height: 12px;
+	margin-top: 8px;
+}
+.main-right .right-container .box5 .project1-description .row-line1{
+	width: 280px;
+	height: 1px;
+	background-color: #dddedd;
+	display: inline-block;
+	margin-top: 9px;
+}
+/*价格*/
+.main-right .right-container .box5 .project1-description .span003{
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	color: #c3c2c2;
+	display: inline-block;
+	line-height: 12px;
+	margin-top: 4px;
+	margin-left: 14px;
+	vertical-align: top;
+}
+/*符号*/
+.main-right .right-container .box5 .project1-description .img1{
+	margin-right: 4px;
+}
+/*158*/
+.main-right .right-container .box5 .project1-description .span004{
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	color: #535353;
+	display: inline-block;
+	line-height: 12px;
+	margin-top: 9px;
+}
+.main-right .right-container .box5 .project1-description .col-line1{
+	width: 1px;
+	height: 43px;
+	background-color:#dddedd;
+	display: inline-block;
+	margin-left: 49px;
+	vertical-align: top; 
+}
+.main-right .right-container .box5 .project1-description .row-line2{
+	width: 314px;
+	margin-top: 0px;
+}
+/*详细描述*/
+.main-right .right-container .box5 .project1-description .span007{
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	color: #c3c2c2;
+	display: inline-block;
+	line-height: 12px;
+	margin-top: 4px;
+	margin-left: 15px;
+	margin-bottom: 110px;
+}
+/*该项目负责人*/
+.main-right .right-container .box5 .project1-description .span008{
+	color: #535353;
+	margin-top: 7px;
+	display: inline-block;
+}
+/*第三根横线*/
+.main-right .right-container .box5 .project1-description .row-line3{
+	width: 280px;
+}
+/*方块*/
+.main-right .right-container .box5 .project1-description .span010{
+	width: 14px;
+	height: 14px;
+	background-color: #d5d5d5;
+	display: inline-block;
+	margin-top:11px;
+	margin-right: 8px;
+
+}
+/*勾勾*/
+.main-right .right-container .box5 .project1-description .img2{
+	margin-top: 3px;
+	margin-left: 3px;
+}
+/*协议*/
+.main-right .right-container .box5 .project1-description .span011{
+	font-size: 12px;
+	font-family: "Microsoft YaHei";
+	color:#c3c2c2;
+	display: inline-block;
+	line-height: 12px;
+}
+/*搜索*/
+.main-right .right-container .box5 .project1-description .span012{
+	color: #ffffff;
+	font-size: 12px;
+	font-family: SimHei;
+	width: 51px;
+	height: 26px;
+	background-color: #388ac1;
+	display: inline-block;
+	text-align: center;
+	line-height: 26px;
+	margin-left: 134px;
+	margin-top: 5px;
+}
+/*box6*/
+.main-right .right-container .box6{
+	width: 351px;
+	height: 357px;
+	box-sizing: border-box;
+	border: 1px solid #e7e8eb;
+	background-color: #ffffff;
+	border-radius: 10px;
+	margin-right: 8px;
+	margin-top: 8px;
+	float: left;
+}
+/*第一组项目*/
+.main-right .right-container .box6 .project1{
+	width: 349px;
+	height: 41px;
+	background-color: #f4f5f7;
+	color: #aaaaaa;
+	font-size: 12px;
+	font-family: SimHei;
+	padding-left: 19px;
+	padding-top: 15px;
+	box-sizing: border-box;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+}
+/*calendar*/
+.main-right .right-container .box6 .calendar{
+  position: relative;
+  width: 349px;
+  height: 316px;
+  padding-left:22px;
+  box-sizing:border-box;
+}
+/*年*/
+.main-right .right-container .box6 .calendar .select01{
+	width: 64px;
+	height: 22px;
+	box-sizing: border-box;
+	border: 1px solid #cececf;
+	-webkit-appearance:none;
+	appearance:none;
+	margin-top: 10px;
+	margin-right: 6px;
+	background-image: url("../image/box7-img1.png");
+	background-repeat: no-repeat;
+	background-position: 50px 7px;
+	font-family: SimHei;
+	font-size: 12px;
+	line-height: 12px;
+	color: #535353;
+	padding-left: 4px;
+}
+.main-right .right-container .box6 .calendar .line1{
+  width: 1px;
+  height: 20px;
+  display: inline-block;
+  background-color: #f5f6f8;
+  position: absolute;
+  left: 66px;
+  top: 11px;
+}
+/*月*/
+.main-right .right-container .box6 .calendar .select02{
+	width: 85px;
+	height: 22px;
+	box-sizing: border-box;
+	border: 1px solid #cececf;
+	-webkit-appearance:none;
+	appearance:none;
+	margin-top: 10px;
+	margin-right: 6px;
+	background-image: url("../image/box7-img1.png");
+	background-repeat: no-repeat;
+	background-position: 52px 7px;
+	font-family: SimHei;
+	font-size: 12px;
+	line-height: 12px;
+	color: #535353;
+	padding-left: 25px;
+}
+.main-right .right-container .box6 .calendar .line2{
+  width: 1px;
+  height: 20px;
+  display: inline-block;
+  background-color: #f5f6f8;
+  position: absolute;
+  left: 157px;
+  top: 11px;
+}
+/*标注日期*/
+.main-right .right-container .box6 .calendar .select03{
+	width: 75px;
+	height: 22px;
+	box-sizing: border-box;
+	border: 1px solid #cececf;
+	-webkit-appearance:none;
+	appearance:none;
+	margin-top: 10px;
+	margin-right: 6px;
+	background-image: url("../image/box7-img1.png");
+	background-repeat: no-repeat;
+	background-position: 61px 7px;
+	font-family: SimHei;
+	font-size: 12px;
+	line-height: 12px;
+	color: #535353;
+	padding-left: 4px;
+}
+.main-right .right-container .box6 .calendar .line3{
+  width: 1px;
+  height: 20px;
+  display: inline-block;
+  background-color: #f5f6f8;
+  position: absolute;
+  left: 238px;
+  top: 11px;
+}
+/*返回今天按钮*/
+.main-right .right-container .box6 .calendar .btn01{
+	width: 64px;
+	height: 22px;
+	box-sizing: border-box;
+	text-align: center;
+	font-size: 12px;
+	font-family: SimHei;
+	border:1px solid #cdcecf;
+	background-color: #ffffff;
+}
+/*换成上下边框*/
+/*.main-right .right-container .box6 .calendar .row-line1{
+	width: 310px;
+	height: 1px;
+	background-color: #a9cfec;
+	display: inline-block;
+	margin-left: -2px;
+	margin-top: 10px;
+}*/
+.main-right .right-container .box6 .calendar .table1{
+	margin-top: 10px;
+}
+.main-right .right-container .box6 .calendar .table1 thead{
+	width: 310px;
+	height: 31px;
+	box-sizing: border-box;
+	font-size: 12px;
+	font-family: SimHei;
+	text-align: center;
+	margin-left: -2px;
+	display: inherit;
+}
+.main-right .right-container .box6 .calendar thead,thead td{
+	border-bottom:1px solid #e1e2e2;
+	border-top:1px solid #a9cfec; 
+	border-collapse: collapse; 
+}
+.main-right .right-container .box6 .calendar tbody{
+	width: 310px;
+	box-sizing: border-box;
+	display: inherit;
+}
+/*这里需要设置每个方块的宽和高，这样前面四个才会占位，但如果途中没有给出方框，怎么去量每个元素的宽和高呢*/
+/*廿五 廿六*/
+.main-right .right-container .box6 .calendar tbody td{
+	font-size: 12px;
+	transform: rotate(0.95);
+	font-family: SimHei;
+	width: 42px;
+	height: 42px;
+	text-align: center;
+	vertical-align: middle;
+	box-sizing: border-box;
+}
+.main-right .right-container .box6 .calendar tbody td a{
+ text-decoration: none;
+ color: #323333;
+
+}
+/*文字变红*/
+.main-right .right-container .box6 .calendar tbody .fool-day,.clear-day{
+	color: #c9161d;
+}
+/*首先类的位置放错，放在了td中。而且由于a设置了颜色，所以这样设置不起作用
+.main-right .right-container .box6 .calendar tbody .red-date{
+	color: #c9161d;
+}*/
+/*数字变红*/
+.main-right .right-container .box6 .calendar tbody .red-date{
+	color: #c9161d;
+}
+/*加边框*/
+.main-right .right-container .box6 .calendar tbody .yellow-border{
+	border: 1px solid #f7d155;
+}
+
+
+/*box7--最后一个啦*/
+.main-right .right-container .box7{
+	width: 532px;
+	height: 359px;
+	box-sizing: border-box;
+	border: 1px solid #e7e8eb;
+	background-color: #ffffff;
+	border-radius: 10px;
+	margin-top: 8px;
+	float: left;
+}
+/*第一组项目*/
+.main-right .right-container .box7 .project1{
+	width: 530px;
+	height: 41px;
+	background-color: #f4f5f7;
+	color: #aaaaaa;
+	font-size: 12px;
+	font-family: SimHei;
+	padding-left: 19px;
+	padding-top: 15px;
+	box-sizing: border-box;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+
+} 
+.main-right .right-container .box7 .brand-data{
+	width: 530px;
+	height: 361px;
+	margin: 0 auto;
+}
+.main-right .right-container .box7 .brand-data table{
+	width: 451px;
+	height: 276px;
+	box-sizing: border-box;
+	font-size: 0;
+	margin: 0 auto;
+	margin-top: 18px;
+}
+/*底部没有边框*/
+.main-right .right-container .box7 .brand-data .table2,.table2 th,.table2 td{
+	border:1px solid #cacbcb;
+	border-collapse: collapse;
+	border-bottom: none;
+}
+.main-right .right-container .box7 .brand-data table th{
+	font-family: SimHei;
+	font-size: 13px;
+	color: #231815;
+}
+.main-right .right-container .box7 .brand-data table td{
+	font-family: SimHei;
+	font-size: 12px;
+	color: #323333;
+}
+.main-right .right-container .box7 .brand-data table td .brand1{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:141px solid #ed6e52;
+}
+.main-right .right-container .box7 .brand-data table td .brand2{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:121px solid #ef8050;
+}
+.main-right .right-container .box7 .brand-data table td .brand3{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:111px solid #f19f4f;
+}
+.main-right .right-container .box7 .brand-data table td .brand4{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:99px solid #7ecaf0;
+}
+
+.main-right .right-container .box7 .brand-data table td .brand5{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:101px solid #7ecaf0;
+}
+.main-right .right-container .box7 .brand-data table td .brand6{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:111px solid #7ecaf0;
+}
+.main-right .right-container .box7 .brand-data table td .brand7{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:90px solid #ed6e52;
+}
+.main-right .right-container .box7 .brand-data table td .brand8{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:41px solid #ed6e52;
+}
+.main-right .right-container .box7 .brand-data table td .brand9{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:110px solid #ed6e52;
+}
+.main-right .right-container .box7 .brand-data table td .brand10{
+	display: inline-block;
+	width: 167px;
+	height: 4px;
+	box-sizing: border-box;
+	background-color: #dcdcdc;
+	border-left:61px solid #ed6e52;
+}
+/*加灰色背景*/
+.main-right .right-container .box7 .brand-data table .first-tr{
+	background-color: #f4f5f6;
+}
+.main-right .right-container .box7 .brand-data table tr:hover{
+	background-color: #f4f5f6;
+}
+/*选择第三个td*/
+.main-right .right-container .box7 .brand-data table tr td:nth-child(3){
+	padding-left: 34px;
+	box-sizing:border-box; 
+}
+/*选择第1个td--只能用padding，来解决元素内部问题，margin是外部哦!*/
+.main-right .right-container .box7 .brand-data table tr td:nth-child(1){
+	padding-left: 32px;
+}
+/*选择第2个td*/
+.main-right .right-container .box7 .brand-data table tr td:nth-child(2){
+	padding-left: 32px;
+}
+.main-right .right-container .box7 .brand-data table tr td .brand1,.brand2,.brand3,.brand4,.brand5,.brand6,.brand7,.brand8,.brand9,.brand10{
+	margin-left: 24px;
+   
+}
+.data1{
+	vertical-align: middle;
+}

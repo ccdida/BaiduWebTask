@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		body{
+			height: 2000px;
+		}
+		/*text-gradual-1 */
+		/*多行文字居中第一种方式：
+		父元素display:table;
+		子元素display:table-cell vertacal-align:middle;*/
+		.beautifulBox{
+			width: 440px;
+			height: 293px;
+			margin: 30px auto;
+			position: relative;	
+		}
+		.toOurLove{
+			width: 300px;
+			height: 200px;
+			/*background-color: #ec617a57;*/
+			position: absolute;
+			left: 70px;
+			top: 45px;
+			text-align: center;
+			display: table;
+		}
+		.middleContainer{
+			display: table-cell;
+			vertical-align: middle;
+		}
+		.middleContainer h3{
+			color: #ec2d4feb;
+			margin-top: 0px;	
+		}
+		.middleContainer p{
+			color:#bcf40feb;
+			margin-bottom: 0px;
+		}
+		div:hover{
+			cursor: url("img/cursor.png"),auto;
+
+		}
+		.toOurLove::before{
+			content:"";
+			position: absolute;
+			left: 0px;
+			top: 50%;
+			width: 100%;/*宽不变，所以先设置好*/
+			height: 0;
+			border: 3px solid #f0d3d9b8;
+			border-width: 0 3px;
+			transition: all 1s;
+			box-sizing: border-box;
+			visibility: hidden;
+		}
+		.beautifulBox:hover .toOurLove::before{
+            
+			height: 100%;
+			visibility: visible;
+			top: 0;
+		}
+		.toOurLove::after{
+			content:"";
+			position: absolute;
+			top: 0;
+			left: 50%;/*让元素居中，向两边变化*/
+			height: 100%;/*宽不变，所以先设置好*/
+			width: 0;
+			border: 4px solid #f0d3d9b8;
+			border-width: 4px 0;
+			transition: all 1s;
+			box-sizing: border-box;
+			visibility: hidden;
+		}
+		.beautifulBox:hover .toOurLove::after{
+            
+			width: 100%;
+			visibility: visible;
+			left: 0;
+		}
+		/*设置模糊*/
+		.beautifulBox:hover img{
+			filter: blur(2px);
+			-webkit-filter:blur(2px);
+		}
+		/*设置背景色*/
+		.beautifulBox:hover .toOurLove{
+			background-color: #ec617a57;
+		}
+		/*设置文字动画-隐藏*/		
+		.littleBeauty{
+			animation: littleBeauty 5s infinite;
+			/*设置渐变色*/
+			background: -webkit-linear-gradient(left,#f0637c,#7dfc14 25%,#fcc514 50%,#1af7fc 75%,#ec617a57);
+			background: -o-linear-gradient(left,#f0637c,#7dfc14 25%,#fcc514 50%,#1af7fc 75%,#ec617a57);
+			background: -moz-linear-gradient(left,#f0637c,#7dfc14 25%,#fcc514 50%,#1af7fc 75%,#ec617a57);
+			background: linear-gradient(to right,#f0637c,#7dfc14 25%,#fcc514 50%,#1af7fc 75%,#ec617a57);
+			/*设置文字填充为透明*/
+			-webkit-text-fill-color:transparent;
+			text-fill-color:transparent;
+			/*通过文字分割*/
+			-webkit-background-clip: text;
+			background-clip: text;
+			/*扩大背景长度,其中原理还待解决*/
+			background-size: 200% 100%;
+			font-size: 21px;
+			display: none;
+		}
+		@keyframes littleBeauty{
+			0% {background-position: 0 0;}
+			100% {background-position: -100% 0;}
+		}
+		.nameBeauty{
+			animation: nameBeauty 3s infinite;
+			display: none;
+		}
+		@keyframes nameBeauty{
+			0%{color: #ec2d4feb;}
+			25%{color: #11d9f0eb;}
+			50%{color: #f0f60ceb;}
+			75%{color: #0cf640eb;}
+			100%{color: #0c27f6eb;}
+		}
+		/*显示文字动画*/
+		.beautifulBox:hover .littleBeauty{
+			display: block;
+		}
+		.beautifulBox:hover .nameBeauty{
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<!-- text-gradual-1 用另一种取名法-->
+	<!-- 先解决文字垂直居中问题 -->
+<div class="beautifulBox">
+	<img src="img/hu.jpg">
+	<div class="toOurLove">
+		<div class="middleContainer">
+		<h3 class="littleBeauty">致我们单纯的小美好</h3><br>
+		<p class="nameBeauty">胡一天/沈月</p>
+		</div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</body>
+</html>

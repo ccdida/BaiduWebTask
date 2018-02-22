@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+
+	    body{
+		    font-size: 0;
+		    background-color: #e5dfdfed;
+	    }
+	    /*放背景图片-最外层*/
+	    .box1{
+			width: 440px;
+			height: 293px;/*为放背景图片的div设置宽和高*/
+			box-sizing: border-box;/*在内部留出padding空间*/
+			background-color: #ffffff;/*背景色*/
+			/*background-position: -50px -30px;*/
+		     margin: 0 auto;/*让元素居中*/
+		     position: relative;/*模糊的图片需要定位*/
+		     text-align: center;/*让文字、inline-block元素居中*/
+		    /*animation: fuzzy 5s infinite;*/ 
+		   
+		}
+		/*图片模糊设置*/
+		/*学到一个新的选择方法！以及模糊设置方法*/
+		.box1:hover img{
+			width: 440px;
+			height: 293px;
+			-webkit-filter: blur(2px); /* Chrome, Safari, Opera */
+            filter: blur(2px);
+		}
+		/*设置渐变文字和边框的div-第二层,先隐藏*/
+		.box1 .dis-none{
+			position: absolute;
+		    left: 10px;
+			top: 40px;
+			display: none;
+		}
+		/*设置隐藏和显示，但是这样有个问题是，动画还未结束，鼠标一开，什么画面都没了，另外，边框还应该有缩短的过程，可以试试过渡*/
+		.box1:hover .dis-none{
+			display: block;
+		}
+        /*设置a标签，取消下划线*/
+		.box1 .text-box a{
+			text-decoration: none; 
+		}
+		/*致我们单纯的小美好设置*/
+		.box1 .text-box .span001{
+			 display: inline-block;
+			 -webkit-animation: masked-animation 10s linear;/*渐变效果设置*/
+			 -webkit-background-clip:text;/*让背景色被文字分割*/
+			 background-image: -webkit-linear-gradient(left, #e9135c, #7be5f6 25%,#e9135c 50%, #7be5f6 70%,#e9135c);/*设置渐变背景色*/
+             background-image: -o-linear-gradient(left, #e9135c, #7be5f6 25%,#e9135c 50%, #7be5f6 70%, #e9135c);
+             background-image: -moz-linear-gradient(left, #e9135c, #7be5f6 25%,#e9135c 50%, #7be5f6 70%,#e9135c);
+             background-image: linear-gradient(to right, #e9135c, #7be5f6 25%,#e9135c 50%, #7be5f6 70%, #e9135c);
+             font-size: 21px;
+             line-height: 21px;
+            -webkit-text-fill-color:transparent;/*文字填充颜色设置为透明,这样才能显示出背景色*/
+            text-fill-color:transparent;
+            background-size: 200% 100%;/*把背景的水平方向尺寸扩大一倍,这样背景颜色才能移动*/
+          
+		}
+		@keyframes masked-animation {
+            0%  { background-position: 0 0;}
+           100%  { background-position: -100% 0;}
+          
+           
+        }
+        /*这里动画设置的文字效果必须要在a中设置才有效，可是文字不也在span中吗？*/
+		.box1 .text-box .span002 a{
+        	font-size: 21px;
+        	-webkit-animation: name 10s;/*动画*/
+            animation: name 10s infinite;
+        	display: inline-block;
+        	margin-top: 30px;
+        	line-height: 21px;
+        }
+         @keyframes name{
+        	0% {color:blue;}
+        	25% {color:yellow;}
+        	50% {color:green;}
+        	100% {color:red;}
+        	
+        }
+        /*这是装文字的box，被夹在四根线中间*/
+        .box1 .text-box{
+			margin: 0 auto;
+			text-align: center;
+		
+		    padding: 30px 10px 30px 10px;
+			box-sizing: border-box;
+			height: 160px;
+			display: inline-block;
+			vertical-align: middle;/*非常重要，这样线才会向两边伸展*/      
+		}
+        .line1{
+        	margin: 0 auto;
+        	display: inline-block;
+        	width: 0px;
+        	height: 2px;
+        	background-color: #ffffff;
+            animation: t 10s;
+        }
+        @keyframes t{
+        	0% {width:120px;}
+        	20%{width: 209px;}
+        	80%{width: 209px;}
+        	100% {width: 0px;}
+        	
+        }
+        .line2{
+        	margin: 0 auto;
+        	width: 0px;
+        	height: 2px;
+        	background-color: #ffffff;
+        	display: inline-block;
+        	animation: b 10s;
+        }
+        @keyframes b{
+        	0% {width:120px;}
+        	20%{width: 209px;}
+        	80%{width: 209px;}
+        	100% {width: 0px;}
+        	
+        }
+        .col-line1{
+        	width: 1px;
+        	height: 0px;
+        	background-color: #ffffff;
+        	display: inline-block;
+        	vertical-align: middle;
+        	animation: l 10s;
+        }
+         @keyframes l{
+        	0% {height:100px;}
+        	20% {height: 160px;}
+        	80% {height: 160px;}
+        	100% {height: 0px;}
+        	
+        }
+         .col-line2{
+        	width: 1px;
+        	height: 0px;
+        	background-color: #ffffff;
+        	display: inline-block;
+            vertical-align: middle;
+            animation: r 10s;
+        }
+        @keyframes r{
+        	0% {height: 100px;}
+        	20% {height: 160px;}
+        	80% {height: 160px;}
+        	100% {height: 0px;}
+        	
+        }
+
+	</style>
+</head>
+<body>
+<div class="box1">
+	<img src="./img/hu.jpg">
+	<div class="dis-none">
+	  
+	  <div class="line1"></div><br>
+	  <div class="col-line1"></div>
+	  <div class="text-box">
+		
+	    <span class="span001"><a href="#">致我们单纯的小美好</a></span><br><br><br>
+	    <span class="span002"><a href=""> 胡一天/沈月</a></span>  <!-- 因为加了a标签。所以不生效，为什么？ -->
+	  
+	  </div>
+	 <div class="col-line2"></div><br>
+	 <div class="line2"></div>
+	</div>
+</div>
+</body>
+</html>

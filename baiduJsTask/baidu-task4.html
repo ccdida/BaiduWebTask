@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	
+		#mydiv{
+			display: inline-block;
+			width: 50px;
+			height:50px;
+			background-color: red;
+			text-align: center;        /*文字水平居中对齐*/
+		    line-height: 50px;        /*设置文字行距等于div的高度*/
+		    overflow:hidden;
+		    margin-top: 5px;
+		}
+	
+	</style>
+</head>
+<body>
+<!-- 
+1.先写出大概结构
+2.开始创建函数
+ -->
+<input type="text" id="myNumber" value=""/>
+<input type="button" id="rightEnterBtn" value="右侧入" />
+<input type="button" id="leftEnterBtn" value="左侧入" />
+<input type="button" id="rightOutBtn" value="右侧出" />
+<input type="button" id="leftOutBtn" value="左侧出" />
+<br/>
+
+<!--<div id="mydiv">xi</div>-->
+<script type="text/javascript">
+	
+	//四个按钮的函数
+	//数组的pop push shift unshift方法是否合适？
+	//公共部分
+	
+	var arr=[];//数组里放div节点
+	
+
+
+	function rightEnter(){
+    //点击后会从左侧增加一个div
+    var txt2=document.getElementById("myNumber").value;
+    if(/^\d+$/.test(txt2))
+    {
+	arr.push(txt2);//先得到数字
+	var mydiv=document.createElement("div");
+	mydiv.style.width="50px";
+	mydiv.style.height="50px";
+	mydiv.style.backgroundColor="red";
+	mydiv.style.float="left";
+	mydiv.style.marginTop="5px";
+	mydiv.style.marginRight="3px";
+	mydiv.style.textAlign="center";
+	mydiv.style.lineHeight="50px";
+	for(i=0;i<arr.length;i++){
+    
+    mydiv.innerText=arr[i];	//只保留新的值，也就是每次只增加一个值
+							}
+	
+	document.body.appendChild(mydiv);
+    
+	}
+	else{
+	alert("please write number");
+				}
+}
+
+	function leftEnter(){
+	//点击后会从右侧增加一个div
+	txt2=document.getElementById("myNumber").value;
+	if(/^\d+$/.test(txt2)){
+	var a=document.getElementsByTagName("div");
+	for(i=0;i<a.length;i++){
+		
+		//console.log(a[i])
+		document.body.removeChild(a[i]);
+		i=i-1;
+		a=document.getElementsByTagName("div");//每次循环会把所有的元素按a[0]删除
+	}
+
+	arr.unshift(txt2);//先得到数字
+	for(i=0;i<arr.length;i++){
+    var mydiv=document.createElement("div");
+    mydiv.style.width="50px";
+	mydiv.style.height="50px";
+	mydiv.style.backgroundColor="red";
+	mydiv.style.float="left";
+	mydiv.style.marginTop="5px";
+	mydiv.style.marginRight="3px";
+	mydiv.style.textAlign="center";
+	mydiv.style.lineHeight="50px";
+    mydiv.innerText=arr[i];	
+    document.body.appendChild(mydiv);//循环显示数组的值
+	//对于pop来说，每次都是新的值，对unshift来说，每次增加都是数组最前面值
+	//放在里面还会覆盖？怎么只有一个值
+
+	}
+	
+	}
+	else{
+	alert("please write number");
+				}
+		
+}
+
+	function rightOut(){
+	//点击后会从右侧减少一个div	
+	 var a =document.getElementsByTagName("div");
+	if(a.length!=0){
+		document.body.removeChild(a[a.length-1]);
+		arr.pop();
+		}
+		else alert("nothing");
+	}
+
+	function leftOut(){
+	//点击后会从左侧减少一个div	
+	 var a=document.getElementsByTagName("div")
+	if(a.length!=0){
+       
+	
+		document.body.removeChild(a[0]);
+		arr.shift();
+		}
+		else  alert("please");
+	}
+	//四个按钮的调用
+	window.onload=function clickBtn(){
+		var rightEnterBtn=document.getElementById('rightEnterBtn');
+		var leftEnterBtn=document.getElementById('leftEnterBtn');
+		var rightOutBtn=document.getElementById('rightOutBtn');
+		var leftOutBtn=document.getElementById('leftOutBtn');
+		rightEnterBtn.onclick=rightEnter;
+		leftEnterBtn.onclick=leftEnter;
+		rightOutBtn.onclick=rightOut;
+		leftOutBtn.onclick=leftOut;
+	}
+</script>
+</body>
+</html>

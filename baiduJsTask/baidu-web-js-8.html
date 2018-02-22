@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	    body{
+	    
+	    }
+		/*#box{
+
+			width: 1222px;
+			padding: 10px 10px;
+			box-sizing: border-box;
+			border: 1px solid grey;
+			
+			
+		}*/
+		.flex{
+			padding:10px;
+			
+			border: 1px solid black;
+			display: -webkit-flex;
+			display: flex;
+			flex-flow: row nowrap;
+			align-items: center;
+			justify-content: flex-start;
+		}
+		.items{
+			
+    	margin-left: 4px;
+
+
+		}
+		.box1{
+			box-sizing: border-box;
+			font-size: 16px;
+			width: 100%;
+			height: 400px;			
+		}
+		/*.box1 .box01{
+			width: 485px;
+			height: 138px;
+		}
+		.box1 .box01-1{
+			width:227.5px;
+			height: 116px;
+		}
+		.box1 .box01-1 .box01-1-1{
+			width: 98.75px;
+			height: 94px;
+		}*/
+		/*#preOrder{
+			position: absolute;
+			top: 20px;
+			right: 260px;
+		}
+		#inOrder{
+			position: absolute;
+			top: 20px;
+			right: 190px;
+		}
+		#postOrder{
+			position: absolute;
+			top: 20px;
+			right: 120px;
+		}*/
+		
+	</style>
+</head>
+<body>
+
+<div class="box1 flex" id="box1">222<!-- 第一层 -->
+		<div class="box01 flex items">333<!-- 第二层 -->
+			<div class="box01-1 flex items">444<!-- 第三层 -->
+				<div class="box01-1-1 flex items">A<!-- 使用firstchild时，要把空格去掉。 -->			
+				</div>
+				<div class="box01-1-1 flex items">B		
+				</div>
+				<div class="box01-1-1 flex items">C<!--如果是innerText，现在里面元素的值都是box1的innertext，所以可以查找文本子节点值（nodetype），来寻找匹配值。-->			
+				</div>
+				<div class="box01-1-1 flex items">D<!--最底层-->			
+				</div>
+			</div>
+			<div class="box01-1 flex items">555<!-- 第三层 -->
+				<div class="box01-1-1 flex items">single<!--最底层-->
+				</div>
+				<div class="box01-1-1 flex items">doule<!--最底层-->
+				</div>
+			</div>
+			<div class="box01-1 flex items">555<!-- 第三层 -->
+			</div>
+		</div>
+		<div class="box01 flex items">中国<!-- 第二层 -->
+			<div class="box01-1 flex items">四川<!-- 第三层 -->
+				<div class="box01-1-1 flex items">绵阳<!--最底层-->			
+				</div>
+				<div class="box01-1-1 flex items">德阳<!--最底层-->			
+				</div>
+				<div class="box01-1-1 flex items">成都<!--最底层-->			
+				</div>
+			</div>
+			<div class="box01-1 flex items">北京<!-- 第三层 -->
+				<div class="box01-1-1 flex items">朝阳区<!--最底层-->	
+					<div class="flex items">南门街道</div>	
+				</div>
+				<div class="box01-1-1 flex items">东区<!--最底层-->	
+				</div>
+			</div>
+		</div>
+		<div class="box01 flex items">上海<!-- 第三层 -->
+	    </div>
+</div>
+
+
+	<!-- <div class="box1 flex">
+		<div class="box01 flex">
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">			
+				</div>
+				<div class="box01-1-1 flex">			
+				</div>
+			</div>
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">
+				</div>
+				<div class="box01-1-1 flex">
+				</div>
+			</div>
+		</div>
+		<div class="box01 flex">
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">			
+				</div>
+				<div class="box01-1-1 flex">			
+				</div>
+			</div>
+			<div class="box01-1 flex">
+				<div class="box01-1-1 flex">
+				</div>
+				<div class="box01-1-1 flex">
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+<button id="preOrder" disabled="disabled">前序遍历</button>
+<button id="inOrder" disabled="disabled">中序遍历</button>
+<button id="postOrder" disabled="disabled">后序遍历</button>
+<button id="levelOrder">层次遍历</button><br/>
+<input type="text" id="inquireBox" name="" value="">
+<button id="inquire" style="margin-right: 20px;">查询</button><br>
+<input type="text" name="" id="inputbox"> 
+<button id="add" style="margin-right: 20px;">增加</button>
+
+<button id="del">删除</button>
+
+
+<script type="text/javascript">
+// 效果：遍历节点，通过背景色改变的动画形式呈现
+// 涉及函数：
+// 遍历函数：得到节点顺序的数组
+// 动画函数：遍历数组，在时间间隔内改变数组类节点的背景色
+	window.onload=function(){//在文档加载完以后执行
+		function init(){
+			var body=document.getElementsByTagName("body")
+			var preOrder=document.getElementById('preOrder');
+			var inOrder=document.getElementById('inOrder');
+			var postOrder=document.getElementById('postOrder');
+			var levelOrder=document.getElementById("levelOrder");//层次遍历
+			var rootNode=document.getElementById("box1");//根节点
+			var add=document.getElementById("add");//增加
+			var inputbox=document.getElementById("inputbox");
+			var del=document.getElementById("del");//删除
+
+
+			
+			// var rootNode=document.getElementsByTagName("body")[0];这样是错误的，因为此时body中最后一个孩子是<script>
+			// 调用click事件
+			//前序遍历
+			preOrder.onclick=function preOrderBtnClick(){
+				let arr=[];
+				preOrderClick(rootNode,arr);
+				setAnimation(arr);
+			}
+			//中序遍历
+			inOrder.onclick=function inOrderBtnClick(){
+				
+				let arr=[];
+				inOrderClick(rootNode,arr);
+				setAnimation(arr);
+			}
+			//后序遍历
+			postOrder.onclick=function postOrderBtnClick(){
+				
+				let arr=[];
+				postOrderClick(rootNode,arr);
+				setAnimation(arr);
+			}
+			//层次遍历
+			levelOrder.onclick=function levelOrderBtnClick(){
+				let arr=[];
+				levelOrderClick(rootNode,arr);
+				setAnimation(arr);
+			}
+			//查询
+			inquire.onclick=function inquireBtnClick(){
+				var inquire=document.getElementById("inquire");
+			    var txt=document.getElementById("inquireBox").value;//必须放在这里，只有点击的时候才会获取到实时的值。
+			    // txt=txt.replace(/(^\s*)|(\s*$)/g,""); //正则不需要加引号？处理后，查询的时候不会因为firChild出问题?但这里是查询框的处理，不是文档div的处理。
+				txt=txt.trim();
+				if (txt.length>0) {
+					let arr=[];
+					inquireClick(rootNode,arr);
+					setInquireAnimation(arr,txt);
+					
+				}
+			    else{
+				alert("please write what you need");
+					
+			    }
+			}
+			//选择函数
+			var c=0;
+			var b=0;
+			box1.onclick=function choose(event){
+				c=1;
+				b=1;
+				var a=[];
+			    inquireClick(rootNode,a);
+			    console.log(a);
+			    var target;
+			    for(k=0;k<a.length;k++){
+			    	a[k].style.backgroundColor="#ffffff";
+			    }
+			    	target=event.target;
+			    	target.style.backgroundColor="red";
+			    	// if(event){
+			    	// 	event.stopPropagation();
+			    	// }
+			    	// else{
+			    	// 	event=window.event;
+			    	// 	event.cancelBubble=true;
+			    	// }
+			
+			//增加函数，三者之间有一个对应的数组。
+			add.onclick=function addBtnClick(){
+
+				var inputtxt=inputbox.value.trim();//获取输入框内容
+				if(inputtxt.length==0){
+					alert("请输入需要添加的内容");
+				}
+				else if(c==0){
+					alert("请选择需要插入的节点");
+				}
+				else{
+					var mydiv1=document.createElement("div");
+					mydiv1.setAttribute("class","flex items");
+					mydiv1.innerText=inputtxt;
+					target.appendChild(mydiv1);
+					mydiv1.style.backgroundColor="#ffffff";
+				}
+
+
+
+			}
+			//删除函数
+			del.onclick=function delBtnClick(){
+				c=0;
+				if (b==0){
+					alert("请选择需要删除的节点");
+				}
+				else if(target==rootNode) {
+					
+					for(i=0;i<target.childNodes.length;i++){
+						target.removeChild(target.childNodes[i]);
+						i=0;
+					}
+					target.style.backgroundColor="#ffffff";
+					alert("sorry，不可删除容器哟,请增加节点");
+				}
+				else{
+
+					for(i=0;i<target.childNodes.length;i++){
+						// alert(target.childNodes[i].nodeName)注释也算节点
+						target.removeChild(target.childNodes[i]);
+						i=0;//不用判断有没有子孩子，因为添加了文本，所以肯定是有的！并不是空div
+					}
+					target.parentNode.removeChild(target);
+					b=0;
+				}
+
+
+			}
+
+			}
+
+
+			 //增加函数，三者之间有一个对应的数组。
+			add.onclick=function addBtnClick(){
+				var inputtxt=inputbox.value.trim();//获取输入框内容
+				if(c==0){
+					alert("请选择需要插入的节点");//如果可以是空白表格呢?
+				}
+				else if(inputtxt.length==0){
+					alert("请输入需要添加的内容");
+				}
+
+			}
+
+			//删除函数
+			del.onclick=function delBtnClick(){
+				if(b==0){
+					alert("先选择需要删除的元素");
+				}
+
+			}
+			
+
+		}
+
+		init();
+	//前序遍历思路：找到元素的根节点.需要深入理解递归。
+		function preOrderClick(rootNode,arr){
+			if (rootNode!==null){
+
+			arr.push(rootNode);
+			preOrderClick(rootNode.firstElementChild,arr);
+			preOrderClick(rootNode.lastElementChild,arr);
+
+			}
+
+		}
+	//中序遍历
+		function inOrderClick(rootNode,arr){
+			if (rootNode!==null){
+			inOrderClick(rootNode.firstElementChild,arr);
+			arr.push(rootNode);
+			inOrderClick(rootNode.lastElementChild,arr);
+
+			}
+
+		}
+	//后序遍历:递归，总之调用一次，就会把所有指令的执行完，只是顺序上的问题而已。
+		function postOrderClick(rootNode,arr){
+			if (rootNode!==null){
+			postOrderClick(rootNode.firstElementChild,arr);
+			postOrderClick(rootNode.lastElementChild,arr);
+			arr.push(rootNode);
+
+			}
+
+		}
+	//层次遍历	
+		function levelOrderClick(rootNode,arr){
+			if(rootNode!==0){
+				var stack=[];
+				stack.push(rootNode);
+				while(stack.length!==0){
+					rootNode=stack.shift();
+					arr.push(rootNode);
+					for(i=0;i<rootNode.children.length;i++){
+						stack.push(rootNode.children[i]);
+					}
+
+
+				}
+			}
+		}
+	//查询遍历
+		function inquireClick(rootNode,arr){
+			if(rootNode!==0){
+				var stack=[];
+				stack.push(rootNode);
+				while(stack.length!==0){
+					rootNode=stack.shift();
+					arr.push(rootNode);
+					for(i=0;i<rootNode.children.length;i++){
+						stack.push(rootNode.children[i]);
+					}
+
+
+				}
+			}
+		}
+
+	//动画,参数-节点数组
+	 	var timesRun=0;
+	 	var interval;
+	 	var i=0;
+		function setAnimation(arr){
+			clearInterval(interval);//写在这里为了防止多次点击变快
+				if (timesRun!=0){
+					
+					for(k=0;k<arr.length;k++){
+								arr[k].style.backgroundColor="#ffffff";
+							}
+
+				}
+				
+					timesRun=0;
+					i=0;
+					interval=setInterval(function(){myTimer()},300);
+					function myTimer(){
+						
+						if (timesRun==arr.length) {
+							
+							clearInterval(interval);
+							for(k=0;k<arr.length;k++){
+								arr[k].style.backgroundColor="#ffffff";
+							}
+						}
+						else{
+							for(j=0;j<arr.length;j++){
+								arr[j].style.backgroundColor="#ffffff";
+							}
+
+							arr[i].style.backgroundColor="red";
+
+							i+=1;
+							timesRun+=1;
+						}
+					
+
+					}
+				
+			
+			 
+
+		}
+// 查询遍历动画
+        var timesRuns=0;
+	 	var intervals;
+	 	var j=0;
+		function setInquireAnimation(arr,txt){
+			    //重新开始查询
+			    
+				if (timesRuns!=0){
+					clearInterval(intervals);
+					for(k=0;k<arr.length;k++){
+								arr[k].style.backgroundColor="#ffffff";
+							}
+				}
+				//查询过程
+					timesRuns=0;
+					j=0;
+                    var stack=[];//之前放在里面，每次调用函数都给清空了。
+					intervals=setInterval(function(){myTimer()},100);
+					function myTimer(){
+						
+						if (timesRuns==arr.length) {
+							for(j=0;j<arr.length;j++){
+								arr[j].style.backgroundColor="#ffffff";
+							}
+							clearInterval(intervals);
+							if(stack.length==0){
+								alert("抱歉，没有符合要求的值");
+							}
+							else{
+								alert("这里有"+stack.length+"个结果");
+								for(k=0;k<stack.length;k++){
+									stack[k].style.backgroundColor="yellow";
+								}
+							}
+
+						}
+						else{
+							for(j=0;j<arr.length;j++){
+								arr[j].style.backgroundColor="#ffffff";
+							}
+
+							arr[i].style.backgroundColor="red";
+
+							console.log(arr[i]);
+							if(txt==arr[i].firstChild.nodeValue.trim()){
+								stack.push(arr[i]);
+								console.log(stack);
+
+							}
+
+							i+=1;
+							timesRuns+=1;//这两步必须放在if外面，因为无论是否匹配都要执行。
+
+							
+						}
+						
+
+
+
+
+
+					}
+				
+			
+			 
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+		
+
+
+</script>
+</body>
+</html>

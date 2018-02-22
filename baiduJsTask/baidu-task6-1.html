@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#myDiv .mydiv1{
+			float: left;
+		    line-height: 50px;
+			background-color: red;
+			text-align: center;        /*文字水平居中对齐*/
+		    margin-right:10px;         /*设置文字行距等于div的高度*/
+		    margin-top: 5px;
+		}
+		#myNumber{
+			width: 200px;
+			height: 100px;
+
+		}
+	</style> 
+</head>
+<body>
+
+<textarea id="myNumber" placeholder=""></textarea>
+<input type="button" id="button1" value="左侧入" />
+<input type="button" id="button2" value="右侧入" />
+<input type="button" id="button3" value="左侧出" />
+<input type="button" id="button4" value="右侧出" />
+<br/>
+<br/>
+
+
+<input type="text" id="checkBtn"  name="" />
+<input type="button" id="button5" value="请输入查询的值" />
+<br/>
+<div id="myDiv"></div>
+<script type="text/javascript">
+	//1.写出结构
+	//2.写每个按钮的函数
+var arr=[];
+var myDiv=document.getElementById("myDiv");//得到大div
+var myNumber=document.getElementById('myNumber');//
+var mydiv=document.getElementById("mydiv");
+//value应该单独写一个函数
+
+function getValue(txt1){
+	//得到输入的字符串，把字符串中的非数字，英文和中文外的符号换成逗号
+	if(txt1==(""||" ")){
+		alert("请输入内容");
+	}
+	else{
+	var newtxt=txt1.replace(/[^\dA-Za-z\u3007\u4E00-\u9FCB\uE815-\uE864]/g,",")
+    return newtxt;//得到字符串，现在把字符创用函数分开，并把他放在数组里。
+
+}
+}
+
+function txtBlank(txt3){
+
+for(i=0;i<txt3.length;i++){
+	if(txt3[i]==""){
+
+		// txt3[i]="&nbsp;";
+		txt3.splice(i,1);
+		i=i-1;//删除的同时，索引也变了。
+	}
+	
+}
+  return txt3;
+}
+
+
+
+function leftEnterBtn(){
+//左进函数
+    var txt=myNumber.value;
+    var txt2=getValue(txt);
+    var txt3=txt2.split(",");
+    var txt4=txtBlank(txt3);
+    
+    arr.unshift(txt4);
+
+    console.log(txt4);
+    var mydiv=document.createElement("div");
+    mydiv.setAttribute("class","mydiv");
+    for(i=0;i<txt4.length;i++){
+		var mydiv1=document.createElement("div");//创建div节点
+		mydiv1.setAttribute("class","mydiv1");//为了设置css
+		mydiv1.innerHTML=txt4[i];
+		mydiv.appendChild(mydiv1);
+ 		}
+		if(myDiv.children.length==0){//如果一个元素都没有
+			myDiv.appendChild(mydiv);
+			}
+			else{
+				myDiv.insertBefore(mydiv,myDiv.children[0]);
+				}
+    
+	
+}
+
+
+
+
+function rightEnterBtn(){
+//右进函数
+var txt=myNumber.value;//获取输入的value
+var txt2=getValue(txt);
+var txt3=txt2.split(",");
+var txt4=txtBlank(txt3);
+arr.push(txt4);
+
+var mydiv=document.createElement("div");
+mydiv.setAttribute("class","mydiv");
+for(i=0;i<txt4.length;i++){
+		var mydiv1=document.createElement("div");//创建div节点
+		mydiv1.setAttribute("class","mydiv1");//为了设置css
+		mydiv1.innerHTML=txt4[i];
+		mydiv.appendChild(mydiv1);
+ 		}
+
+
+	//创建div节点
+	mydiv.setAttribute("class","mydiv");
+	
+	myDiv.appendChild(mydiv);
+}
+
+function leftOutBtn(){
+//左出函数
+ //myDiv.removeChild(myDiv.children[0]);
+ if(myDiv.children.length!=0){
+
+	myDiv.firstChild.removeChild(myDiv.firstChild.firstChild);//不管有没有都要删除,删除目前最后一个子div
+    arr.shift();
+    if(myDiv.firstChild.children.length==0){
+    	myDiv.removeChild(myDiv.firstChild);
+    }
+}
+  else alert("请输入内容");
+
+
+}
+
+function rightOutBtn(){
+//右出函数
+//myDiv.removeChild(myDiv.children[myDiv.children.length-1]);
+if(myDiv.children.length!=0)
+{
+			myDiv.lastChild.removeChild(myDiv.lastChild.lastChild);
+		    arr.pop();//这个数组有问题，放进去的是数组，暂时不需要
+			if(myDiv.lastChild.children.length==0){
+			myDiv.removeChild(myDiv.lastChild);
+		}
+		
+}
+else alert("请输入值");
+	
+}
+
+function checkBtn(){
+//查询函数 myDiv mydiv mydiv1
+//匹配
+var txt5=document.getElementById("checkBtn").value;//得到需要查询的值
+//开始遍历
+
+if(myDiv.children.length!=0){
+for(i=0;i<myDiv.children.length;i++){
+	for(j=0;j<myDiv.children[i].children.length;j++){
+    		myDiv.children[i].children[j].style.backgroundColor ="red";
+			myDiv.children[i].children[j].style.color ="black";
+
+		if (myDiv.children[i].children[j].innerText.indexOf(txt5)>=0){
+			//myDiv.children[i].children[j].innerText==txt5 
+			myDiv.children[i].children[j].style.backgroundColor ="yellow";
+			myDiv.children[i].children[j].style.color ="red";
+		}
+		
+	}
+}
+
+}
+else{
+	alert("请输入原始值")
+}
+
+}
+
+
+
+
+window.onload=function clickBtn(){
+	var button1=document.getElementById("button1");//得到button1
+	var button2=document.getElementById("button2");
+	var button3=document.getElementById("button3");
+	var button4=document.getElementById("button4");
+	var button5=document.getElementById("button5");
+
+	button1.onclick=leftEnterBtn;//左进函数
+	button2.onclick=rightEnterBtn;//右进函数
+	button3.onclick=leftOutBtn;//左出函数
+	button4.onclick=rightOutBtn;//右出函数
+	button5.onclick=checkBtn;
+}
+
+</script>
+</body>
+</html>

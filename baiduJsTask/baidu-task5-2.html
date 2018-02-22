@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#myDiv .mydiv{
+	
+	
+		   
+			display: inline-block;
+			margin-right: 3px;
+			width: 30px;
+		
+			background-color: red;
+			      /*文字水平居中对齐*/
+		     /*设置文字行距等于div的高度*/
+		
+		    
+		    
+		}
+		#myDiv{
+			/*疑惑在于，设置为inline-block后，div得底部在一起显示
+		}
+	</style> 
+</head>
+<body>
+<input type="number" id="myNumber" value=""/>
+<input type="button" id="button1" value="左侧入" />
+<input type="button" id="button2" value="右侧入" />
+<input type="button" id="button3" value="左侧出" />
+<input type="button" id="button4" value="右侧出" />
+<input type="button" id="button5" value="排序"/>
+<br/>
+<div id="myDiv"></div>
+<script type="text/javascript">
+	//1.写出结构
+	//2.写每个按钮的函数
+//把数字和高度对应起来的函数
+var arr=[];
+
+
+var myDiv=document.getElementById("myDiv");//得到大div
+var myNumber=document.getElementById('myNumber');//
+
+function leftEnterBtn(){
+//左进函数
+var txt=myNumber.value;//获取输入的value,放在里面才能获取新值？
+if(!(/^\d+$/.test(txt)&&(txt>=10&&txt<=100))){
+	 alert("请输入10到100之间的整数");}
+	else{
+		if(arr.length==60){
+			alert("哟，你来晚啦");}
+
+		else{
+		arr.unshift(txt);
+	var mydiv=document.createElement("div");//创建div节点
+	mydiv.setAttribute("class","mydiv");
+	mydiv.style.height=txt+"px";
+		if(myDiv.children.length==0){//如果一个元素都没有
+			myDiv.appendChild(mydiv);
+			}
+			else{
+				myDiv.insertBefore(mydiv,myDiv.children[0]);
+				}
+			}
+		}
+}
+
+
+
+function rightEnterBtn(){
+//右进函数
+var txt=myNumber.value;//获取输入的value
+if(!(/^\d+$/.test(txt)&&(txt>=10&&txt<=100)))
+	{
+	 alert("请输入10到100之间的数")
+	}
+	else
+	{
+		if(arr.length==60){
+			alert("哟，你来晚啦");}
+
+		else{
+	arr.push(txt);
+	var mydiv=document.createElement("div");//创建div节点
+	mydiv.setAttribute("class","mydiv");
+	mydiv.style.height=txt+"px";
+	myDiv.appendChild(mydiv);
+     		}
+	}
+}
+
+function leftOutBtn(){
+//左出函数
+ //myDiv.removeChild(myDiv.children[0]);
+ if(myDiv.children.length!=0){
+ 	arr.shift();
+ myDiv.removeChild(myDiv.firstChild);
+}
+else alert("没有数了哟");
+}
+
+function rightOutBtn(){
+//右出函数
+//myDiv.removeChild(myDiv.children[myDiv.children.length-1]);
+if(myDiv.children.length!=0)
+{
+	arr.pop();
+myDiv.removeChild(myDiv.lastChild);
+}
+else alert("没有数了哟");
+	
+}
+
+function sortgg(){
+	//得到排好序后的div数组，再显示出来，不需要，因为这里可以直接改变子节点的排序方式，因为传递的就是子节点
+
+var arr2=[45,0,23,7,6,9];//外层5轮，内层5轮
+}
+
+function sortBtn(){
+	//先得到所有的mydiv
+
+	var arr1=myDiv.children;
+	var len=arr1.length;
+if(len!=0){
+for(var i=0;i<len-1;i++){
+		for(var j=0;j<len-i;j++){
+			if (parseInt(arr[j])>parseInt(arr[j+1])) {
+
+			   var t=arr[j];//这里需要节点的高度
+				arr[j]=arr[j+1];//a[0]=0
+				arr[j+1]=t;//a[1]=45
+				console.log(arr);
+				var t=arr1[j].style.height;//这里需要节点的高度
+				arr1[j].style.height=arr1[j+1].style.height;//a[0]=0
+				arr1[j+1].style.height=t;//a[1]=45
+			}
+		}
+	}
+	}
+	else{
+		alert("请先添加元素");
+	}
+}
+
+	
+
+window.onload=function clickBtn(){
+	var button1=document.getElementById("button1");//得到button1
+	var button2=document.getElementById("button2");
+	var button3=document.getElementById("button3");
+	var button4=document.getElementById("button4");
+
+	button1.onclick=leftEnterBtn;//左进函数
+	button2.onclick=rightEnterBtn;//右进函数
+	button3.onclick=leftOutBtn;//左出函数
+	button4.onclick=rightOutBtn;//右出函数
+	button5.onclick=sortBtn;//排序
+}
+
+</script>
+</body>
+</html>

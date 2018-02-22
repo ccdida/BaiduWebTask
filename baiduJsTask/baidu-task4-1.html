@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		#myDiv .mydiv{
+			float: left;
+			width: 50px;
+			height:50px;
+			background-color: yellow;
+			text-align: center;        /*文字水平居中对齐*/
+		    line-height: 50px;        /*设置文字行距等于div的高度*/
+		    overflow:hidden;
+		    margin-right:2px; 
+		    margin-top: 5px;
+		}
+	</style> 
+</head>
+<body>
+<input type="number" id="myNumber" value=""/>
+<input type="button" id="button1" value="左侧入" />
+<input type="button" id="button2" value="右侧入" />
+<input type="button" id="button3" value="左侧出" />
+<input type="button" id="button4" value="右侧出" />
+<br/>
+<div id="myDiv"></div>
+<script type="text/javascript">
+	//1.写出结构
+	//2.写每个按钮的函数
+
+var myDiv=document.getElementById("myDiv");//得到大div
+var myNumber=document.getElementById('myNumber');//
+
+function leftEnterBtn(){
+//左进函数
+var txt=myNumber.value;//获取输入的value,放在里面才能获取新值？
+if(!/^\d+$/.test(txt))
+	{
+	 alert("please")
+	}
+	else
+	{
+	var mydiv=document.createElement("div");//创建div节点
+	mydiv.setAttribute("class","mydiv");
+	mydiv.innerText=txt;
+		if(myDiv.children.length==0){//如果一个元素都没有
+			myDiv.appendChild(mydiv);
+			}
+			else{
+				myDiv.insertBefore(mydiv,myDiv.children[0]);
+				}
+}
+}
+
+
+
+function rightEnterBtn(){
+//右进函数
+var txt=myNumber.value;//获取输入的value
+if(!/^\d+$/.test(txt))
+	{
+	 alert("please")
+	}
+	else
+	{
+	var mydiv=document.createElement("div");//创建div节点
+	mydiv.setAttribute("class","mydiv");
+	mydiv.innerText=txt;
+	myDiv.appendChild(mydiv);
+}
+}
+
+function leftOutBtn(){
+//左出函数
+ //myDiv.removeChild(myDiv.children[0]);
+ if(myDiv.children.length!=0){
+ myDiv.removeChild(myDiv.firstChild);
+}
+else alert("please");
+}
+
+function rightOutBtn(){
+//右出函数
+//myDiv.removeChild(myDiv.children[myDiv.children.length-1]);
+if(myDiv.children.length!=0)
+{
+myDiv.removeChild(myDiv.lastChild);
+}
+else alert("please");
+	
+}
+
+window.onload=function clickBtn(){
+	var button1=document.getElementById("button1");//得到button1
+	var button2=document.getElementById("button2");
+	var button3=document.getElementById("button3");
+	var button4=document.getElementById("button4");
+
+	button1.onclick=leftEnterBtn;//左进函数
+	button2.onclick=rightEnterBtn;//右进函数
+	button3.onclick=leftOutBtn;//左出函数
+	button4.onclick=rightOutBtn;//右出函数
+}
+
+</script>
+</body>
+</html>

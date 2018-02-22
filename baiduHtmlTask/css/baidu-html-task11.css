@@ -1,0 +1,357 @@
+
+html{
+		font-size: 625%;/*有一个问题是font-size：0；怎么办，放在其他容器？*/
+		  
+	}
+body{
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        background-color: #f5f5f5;
+	}
+.container{
+	margin:0 auto;
+}
+.container .header{
+	width:100%;
+	height: 1.14rem;
+	background-color: #91d4da;
+	color: #ffffff;
+	position: relative;
+}
+.container .header .return-button{
+	width: 1.86rem;
+	height: 1.14rem;
+   padding-left: 0.32rem;
+   box-sizing: border-box;
+	position: absolute;
+	left: 0;
+	top: 0;/*把返回绝对定位，标题margin才能针对父元素*/
+}
+.container .header .return-button img{
+	vertical-align: middle;
+	width: 0.28rem;
+	height: 0.49rem;
+}
+.container .header .return-button .return-txt{
+	vertical-align: middle;
+	font-size: 0.4rem;
+	margin-left: 0.14rem;
+	line-height: 1.14rem;
+}
+/*关键是将返回绝对定位，这样text-align：center，标题直接居中*/
+.container .header h4{
+	font-size: 0.4rem;
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	line-height: 1.14rem;
+	text-align: center;
+	/*之所以不生效是因为你设置为了inline-block，
+	宽度都自适应了还怎么居中？？现在宽度就是浏览器宽度，所以可以居中的。
+	如果写在外面的容器，还会影响到绝对定位的元素?
+	绝对定位的元素会在除了padding的宽度里居中，所以造成有问题！！！*/
+}
+.container .mainer{
+	max-width: 10rem;
+	margin:0 auto;
+
+}
+.container .mainer .part-one-nav{
+	max-width: 10rem;
+	height: 1.16rem;
+	background-color: #ffffff;
+}
+.container .mainer .part-one-nav ul{
+	max-width: 10rem;
+	height: 1.16rem;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	list-style: none;
+	font-size: 0.21rem;
+	margin: 0;
+	padding:0;
+}
+.container .mainer .part-one-nav ul li a{
+	text-decoration: none;
+	color: #646464;
+	display: inline-block;
+	width: 2rem;
+	height: 1.16rem;
+	line-height: 1.16rem;/*居中*/
+	text-align: center;
+	box-sizing: border-box;
+}
+.container .mainer .part-one-nav ul li a:hover{
+
+    box-sizing: border-box;/*要有宽高才会生效啊*/
+	border-bottom: 0.08rem solid #90d3d9;
+
+}
+.container .mainer .part-two-picture{
+	max-width:10rem; 
+	height: 5.47rem;
+}
+.container .mainer .part-two-picture img{
+  max-width: 10rem;
+  height: 5.47rem;
+}
+/*第三部分*/
+.container .mainer .part-three{
+	max-width:10rem;
+	height: 2.94rem;
+	background-color: #ffffff;
+}
+.container .mainer .part-three ul{
+	max-width:10rem;
+	height: 2.94rem;
+	list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	padding:0;
+}
+.container .mainer .part-three ul li{
+	width: 2rem;
+	text-align: center;
+}
+.container .mainer .part-three ul li img{
+	margin-bottom: 0.4rem;
+	width: 1.2rem;
+	height: 1.2rem;
+}
+.container .mainer .part-three ul li span{
+	line-height:0.21rem;
+	font-size: 0.21rem;
+}
+/*第一次中间线*/
+.container .mainer .mainer-line{
+	height: 0.04rem;
+	width: 90%;
+	background-color:#dedede;
+	margin:0 auto;
+}
+.container .mainer .part-four{
+	max-width:10rem;
+	height: 4.2rem; 
+	background-color: #ffffff;
+	display: flex;
+	flex-flow:  row nowrap;
+	align-items: center;
+}
+.container .mainer .part-four ul{
+	width: 10rem;
+	height: 3.38rem;
+	list-style: none;
+    columns: 3;
+    padding: 0;
+}
+.container .mainer .part-four ul li{
+	text-align: center;
+	height: 3.38rem;
+}
+.container .mainer .part-four ul li:nth-child(2){
+	box-sizing: border-box;
+	border-right: 0.04rem solid #e5e5e5;
+	border-left: 0.04rem solid #e5e5e5;
+}
+.container .mainer .part-four ul li img{
+	width: 1.26rem;
+	height: 1.76rem;
+}
+.container .mainer .part-four ul li:nth-child(3) img{
+	width: 1.98rem;
+	height: 1.34rem;
+}
+.container .mainer .part-four ul li .span001{
+   font-size: 0.48rem;
+   line-height: 0.48rem;
+   color: #2f2f2f;
+   display: inline-block;
+   margin-top: 0.28rem;
+
+}
+.container .mainer .part-four ul li .span002{
+   font-size: 0.36rem;
+   line-height: 0.36rem;
+   color: #5d5d5d;
+   display: inline-block;
+   margin-top: 0.28rem;
+}
+.container .mainer .part-four ul li:nth-child(3) .span001{
+	margin-top: 0.66rem;
+}
+/*第五部分*/
+.container .mainer .part-five{
+	max-width: 10rem;
+	height: 6.6rem;
+	background-color: #ffffff;
+	margin-top: 0.34rem;
+	padding: 0.4rem 0.3rem 0rem 0.3rem;
+	box-sizing: border-box;
+}
+.container .mainer .part-five h2{
+	font-size: 0.44rem;
+	line-height: 0.44rem;
+	padding: 0;
+	margin:0;
+	font-weight: normal;
+	margin-bottom: 0.32rem;
+}
+.container .mainer .part-five .first-model{
+	width: 100%;
+	height: 5.18rem;
+	box-sizing: border-box;
+	border-top:0.04rem solid #e0e0e0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	padding-top: 0.39rem;
+}
+.container .mainer .part-five .first-model .model01{
+	height: 4.75rem;
+	display: flex;
+	flex-direction:column;
+	justify-content: space-between;/*沿主轴方向*/
+	/*align-content: space-between;*/
+}
+.container .mainer .part-five .first-model .model01 img{
+  border: 0.02rem solid #ffb935;
+  width: 2.38rem;
+  height: 2.25rem;
+
+}
+.container .mainer .part-five .first-model .model02{
+	width: 3.2rem;
+	height: 4.75rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.container .mainer .part-five .first-model .model02 li{
+	width: 3.2rem;
+	height: 1rem;
+	background-color: #f8f8f8;
+	font-size: 0.36rem;
+	text-align: center;
+	list-style: none;
+	line-height: 1rem;
+}
+.container .mainer .part-five .bottom-line{
+	width: 2.4rem;
+	height: 0.26rem;
+	box-sizing: border-box;
+	border-bottom: 0.01rem solid #ffe4b6;
+}
+.container .mainer .part-seven{
+	max-width:10rem;
+	height: 2.48rem;
+	background-color: #ffffff;
+	margin-top: 0.32rem; 
+	box-sizing: border-box;
+	padding-left: 0.29rem;
+}
+.container .mainer .part-seven .seven1{
+	display: flex;
+	flex-flow: row nowrap;
+   
+}
+/*左边图片右边文字*/
+.container .mainer .part-seven .seven1 .img1{
+	width: 2.82rem;
+	height: 1.98rem;
+	background-color: #eceeed;
+    display: inline-block;
+    text-align: center;
+    margin-top:0.22rem;
+}
+.container .mainer .part-seven .seven1 img{
+  margin-top: 0.28rem;
+  width: 1.02rem;
+  height: 1.52rem;
+}
+.container .mainer .part-seven .article{
+	position: relative;
+	margin-left: 0.3rem;
+}
+.container .mainer .part-seven .article h2{
+	font-size: 0.22rem;
+	line-height: 0.22rem;
+	font-weight: normal;
+	margin:0.28rem 0 0 0;
+}
+.container .mainer .part-seven .source{
+	font-size: 0.18rem;
+	line-height: 0.18rem;
+	color:#d0d0d0;
+	display: inline-block;
+	position:absolute;
+	bottom: 0.05rem; 
+}
+/*单独修改第二个box*/
+.container .mainer .part-seven1{
+	margin-top:4px;
+	box-sizing: border-box;
+	margin-bottom:4px;
+
+}
+.container .mainer .part-eight{
+	max-width: 10rem;
+	height: 3.88rem;
+	padding-left: 0.3rem;
+	padding-right: 0.33rem;
+	background-color: #ffffff;
+
+}
+/*标题*/
+.container .mainer .part-eight h2{
+	font-size: 0.36rem;
+	font-weight: normal;
+	margin: 0.32rem 0rem 0.32rem 0rem;
+	display: inline-block;
+	line-height: 0.36rem;
+}
+/*flex*/
+.container .mainer .part-eight .img{
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+
+}
+/*img边框*/
+.container .mainer .part-eight .img1{
+	width: 3.08rem;
+	height: 2.04rem;
+	background-color: #e8eae9;
+	text-align: center;
+	
+}
+/*img本身*/
+.container .mainer .part-eight img{
+	margin-top: 0.28rem;
+	width: 1.02rem;
+	height: 1.52rem;
+}
+.container .mainer .part-eight .source{
+	font-size: 0.36rem;
+	line-height: 0.36rem;
+	color:#d0d0d0;
+	display: inline-block;
+	margin-top: 0.26rem;
+}
+.container .footer{
+	max-width: 10rem;
+	height: 1.36rem;
+	background-color: #f8f8f8;
+}
+@media screen and (min-width:321px) and (max-width:375px){html{font-size:32px}}
+@media screen and (min-width:376px) and (max-width:414px){html{font-size:37px}}
+@media screen and (min-width:415px) and (max-width:639px){html{font-size:41px}}
+@media screen and (min-width:640px) and (max-width:719px){html{font-size:64px}}
+@media screen and (min-width:720px) and (max-width:749px){html{font-size:72px}}
+@media screen and (min-width:750px) and (max-width:799px){html{font-size:75px}}
+@media screen and (min-width:1000px){html{font-size:100px}}
+
+/*重点在于所有的元素都要改成rem！！最重要的就是图片啦~~~*/

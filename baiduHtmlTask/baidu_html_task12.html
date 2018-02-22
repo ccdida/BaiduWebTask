@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.container{
+			width: 400px;
+			height: 200px;
+			background: yellow;
+			position: relative;
+		}
+		ul{
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			width: 400px;
+			height: 200px;
+
+		}
+		li{
+			display: inline-block;
+			
+		}
+		a{
+			position: absolute;
+			text-decoration: none;
+			color: black;
+			background: #fff;
+			opacity: 0.7;
+			padding: 10px 10px;
+			font-size: 12px;
+			line-height: 12px;
+			top: 170px;
+			z-index: 2;
+		}
+		li:nth-child(1) a{
+			
+			right: 90px;
+		}
+		li:nth-child(2) a{
+			
+			right: 50px;
+		}
+		li:nth-child(3) a{
+			
+			right: 10px;
+		}
+		.active{
+			display: inline-block;
+			position: absolute;
+			height: 200px;
+			width: 0px;
+			top: 0px;
+			left: 0px;
+			
+
+		}
+		.active2{
+			background-color: blue;
+			display: inline-block;
+		}
+		.active3{
+			background-color: pink;
+			display: inline-block;
+
+		}
+
+		li a:hover + span.active{
+			transition: all 2s;
+			width: 400px;
+			
+
+		}
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<ul>
+		<li>
+			<a href="#">页面1</a>
+			<span class="active1 active"></span>
+		</li>
+		<li>
+			<a href="#">页面1</a>
+			<span class="active2 active"></span>
+		</li>
+		<li>
+			<a href="#">页面1</a>
+			<span class="active3 active"></span>
+		</li>
+	</ul>
+</div>
+</body>
+</html>

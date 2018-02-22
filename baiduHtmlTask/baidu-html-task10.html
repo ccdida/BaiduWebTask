@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		margin: 0;
+		padding:20px 20px;
+	}
+		.menu{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-flow: row nowrap;/*方向=换行-贴紧边缘-对其方式-居中*/
+        justify-content: space-between;
+        align-items: center;/*元素居中对齐时，在整个盒子中也会居中对齐*/
+        height: 520px;
+		}
+		.menu li:nth-child(1){
+         width: 150px;
+         height: 120px;
+         border:1px solid red;
+		}
+		.menu li:nth-child(2){
+		 width: 150px;
+         height: 100px;
+         border:1px solid red;	
+		}
+		.menu li:nth-child(3){
+		 width: 150px;
+         height: 40px;
+         border:1px solid red;	
+		}
+		.menu li:nth-child(4){
+		width: 150px;
+         height: 200px;
+         border:1px solid blue;
+
+		}
+		@media (max-width:640px){
+			.menu{
+				flex-flow:row wrap;
+				align-items: flex-start;
+				align-content: space-around;
+			}
+			.menu li{
+				align-self: auto;
+			}
+			.menu li:nth-child(4){
+				order: -1;
+			}
+		}
+		@media (min-width:640px){
+			.menu{
+				flex: row nowrap;
+			}
+			
+		}
+	</style>
+</head>
+<body>
+<ul class="menu">
+	<li><a href=""></a></li>
+	<li><a href=""></a></li>
+	<li><a href=""></a></li>
+	<li><a href=""></a></li>
+</ul>												
+</body>
+</html>	
